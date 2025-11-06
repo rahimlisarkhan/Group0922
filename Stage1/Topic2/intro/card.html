@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main{
+            padding: 100px;
+        }
+
+        .card{
+            width: 300px;
+            /* height: 400px; */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            margin: 20px;
+          
+        }
+
+        .card_img{
+            width: 100%;
+            height: 250px;
+            /* background-color: red; */
+            object-fit: cover;
+            background-color: #f5f5f5;
+        }
+
+        .card_info{
+            padding: 20px;
+        }
+
+        .card_title{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .card_desc{
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .card_price{
+            font-size: 18px;
+            color: green;
+            font-weight: 600;
+        }
+
+        .card_footer{
+            padding: 20px;
+        }
+
+        .add_to_cart{
+            width: 100%;
+            padding: 10px;
+            background-color: #32aa6c;
+            color: white;
+
+            border: none;
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+<body>
+    <main class="main">
+
+        <div class="card">
+            <img class="card_img" src="https://www.fervalle.com/wp-content/uploads/2022/07/transparent-orange-apple5eacfeae85ac29.7815306015883956945475.png" />
+            <div class="card_info" >
+                <p class="card_title">Orange 1kq</p>
+                <p class="card_desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                </p>
+                <p class="card_price">
+                    4.5₼
+                </p>
+            </div>
+
+            <div class="card_footer">
+                <!-- BUTTON -->
+                <button class="add_to_cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card_img" src="https://neptun.az/image/cache/catalog/mvtavakado-1000x1000.jpg?v=9" />
+            <div class="card_info" >
+                <p class="card_title">Avocado 1kq</p>
+                <p class="card_desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                </p>
+                <p class="card_price">
+                    2.5₼
+                </p>
+            </div>
+
+            <div class="card_footer">
+                <!-- BUTTON -->
+                <button class="add_to_cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card_img" src="https://www.fervalle.com/wp-content/uploads/2022/07/transparent-orange-apple5eacfeae85ac29.7815306015883956945475.png" />
+            <div class="card_info" >
+                <p class="card_title">Orange 1kq</p>
+                <p class="card_desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                </p>
+                <p class="card_price">
+                    4.5₼
+                </p>
+            </div>
+
+            <div class="card_footer">
+                <!-- BUTTON -->
+                <button class="add_to_cart">Add to Cart</button>
+            </div>
+        </div>
+
+    </main>
+
+    
+</body>
+</html>

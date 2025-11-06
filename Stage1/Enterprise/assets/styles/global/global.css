@@ -1,0 +1,102 @@
+
+/* =================================================================== */
+/*                             GLOBAL STYLES                           */
+/* =================================================================== */
+
+body {
+    font-family: var(--roboto-regular);
+    background-color: var(--grayColor2);
+}
+
+/* =================================================================== */
+/*                               HEADER                               */
+/* =================================================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid var(--grayColor);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-img {
+    width: 68px;
+    height: 40px;
+}
+
+.logo-brand {
+    font-size: 32px;
+    color: var(--text-color);
+    font-family: var(--poppins-semi-bold);
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    font-family: var(--roboto-semi-bold);
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.nav-item:last-child {
+    color: var(--mainGreen);
+    font-family: var(--roboto-bold);
+}
+
+.btn-ham {
+    display: none;
+    padding: 0 12px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+}
+
+/* =================================================================== */
+/*                           RESPONSIVE STYLES                        */
+/* =================================================================== */
+
+/* TABLET - 901px - 1200px */
+@media screen and (max-width: 1200px) {
+    .nav-list {
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .logo-img {
+        width: 58px;
+        height: 34px;
+    }
+
+    .logo-brand {
+        font-size: 24px;
+    }
+}
+
+/* TABLET - 601px - 900px */
+@media screen and (max-width: 900px) {
+    .btn-ham {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+    }
+}
+
+/* MOBILE - 0 - 600px */
+@media screen and (max-width: 600px) {
+    .logo-brand {
+        display: none;
+    }
+}
+
+/* =================================================================== */
+/*                               FOOTER                               */
+/* =================================================================== */

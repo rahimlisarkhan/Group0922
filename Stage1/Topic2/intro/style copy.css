@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+
+body{
+    padding: 100px;
+}
+
+
+/* p{
+            color: #ffc046 ;
+            background-color: bisque;
+            font-size: 24px;
+        } */
+
+
+/* .parag{
+    color: #ffc046 ;
+    background-color: bisque;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+
+.big_title{
+    font-size: 60px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: red;
+} */
+
+/* 
+
+#student1{
+    background-color: blue;
+} */
+
+.box{
+    /* SIZE */
+    width: 400px;
+    /* width: 50%; */
+    /* height: 800px; */
+    /* height: auto; */
+
+    /* BACKGROUD */
+    background-color: red;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NZpYeEZ2nq7zcYBcCIEff13aA0PNOg4m_A&s");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* TEXT */
+    color: white;
+
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    /* font-style: italic; */
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /* text-decoration: line-through; */
+
+
+    /* SPACING */
+    padding-top: 20px;
+    padding-left: 40px;
+
+    margin-top: 40px;
+    margin-left: 40px;
+
+
+    /* RADIUS */
+    /* border-radius: 20px 10px 40px 100px; */
+    border-radius: 8px;
+
+
+    /* BORDER */
+    /* border-width: 4px;
+    border-style: dashed;
+    border-color: yellow; */
+    border: 2px solid #b4b4b4;
+}
+
+
+
+.box2{
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid black;
+
+    font-size: 24px;
+    color: white;
+    text-align: center;
+
+    & p{
+        font-size: 18px;
+        color: yellow;
+        text-align: left;
+
+        /* span{
+            color: red;
+            font-size: 14px;
+        } */
+    }
+}
+
+/* .box2 p{
+    font-size: 18px;
+    color: yellow;
+    text-align: left;
+} */
+
+
+/* p{
+    color: #ffc046 ;
+    background-color: bisque;
+    font-size: 24px;
+} */
+
+
+.btn{
+    /* width: 150px;
+    height: 50px; */
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    font-size: 18px;
+    
+    /* padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px; */
+
+    padding: 12px 20px;
+
+    color: white;
+    background-color: #007BFF;
+    
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+
+    border: none;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+}
+
+
+/* .arrow{
+    display: none;
+}
+
+.btn:hover{
+    background-color: #0056b3;
+}
+
+.btn:hover .arrow{
+    display: inline;
+}
+
+.btn:active{
+    background: red;
+}
+
+
+.input{
+    width: 300px;
+    height: 40px;
+
+    padding: 10px;
+
+    font-size: 18px;
+    color: rgb(59, 59, 59);
+
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.input:focus{
+    border-color: red;
+    outline: none;
+}
+
+.input::placeholder{
+    color: rgb(213, 213, 213);
+} */
+
+
+/* .btn:disabled{
+    background: grey;
+    cursor: not-allowed;
+} */
+
+
+
+/* .list{
+    margin-top: 100px;
+    list-style-type: none;
+    padding: 0;
+
+    & li{
+        display: inline;
+        margin: 0 5px;
+    }
+} */
+
+
+/* .list li:first-child{
+    color: yellow;
+}
+
+.list li:last-child{
+    color: red;
+} */
+
+
+/* .list li:nth-child(even){
+    color: blue;
+} */
+
+
+
+.box{
+    width: 400px;
+    height: 400px;
+
+    background-color: red;
+}

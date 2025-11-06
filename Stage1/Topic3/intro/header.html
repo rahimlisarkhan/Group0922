@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+
+    <!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .header{
+            /* background-color: red; */
+            height: 102px;
+
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid teal;
+            align-items: center;
+        }
+
+
+        .logo{
+            /* background-color: green; */
+            padding: 12px 24px;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo_image{
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+        }
+
+
+        .navbar{
+            /* background-color: yellow; */
+
+            display: flex;
+            align-items: center;
+
+
+        }
+
+
+        .navlist{
+            list-style: none;
+
+            /* background-color: beige; */
+
+            display: flex;
+            gap: 48px;
+        }
+
+        .nav-link{
+            text-decoration: none;
+            color: #000000;
+
+            font-size: 18px;
+            font-weight: 600;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .actions{
+            padding: 12px 24px;
+            /* background-color: aquamarine; */
+
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn{
+            padding: 12px;
+            background-color: teal;
+            color: white;
+            border: none;
+            border-radius: 8px;
+
+        }
+
+        .btn-ham{
+            display: none;
+            padding:0 12px;
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+        }
+
+        .mobile-menu{
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+
+        /* 0 - 900 */
+        /* 601-900 */
+        @media screen and (max-width:900px) {
+            .navbar{
+                display: none;
+            }
+
+            .actions{
+                display: none;
+            }
+
+            .btn-ham{
+                display: block;
+            }
+        }
+
+        /* 0 - 600 */
+        @media screen and (max-width:600px) {
+            .logo_title{
+                display: none;
+            }
+
+            .logo_image{
+                width: 84px;
+                height: 84px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img class="logo_image" src="https://img.freepik.com/premium-vector/colorful-bird-wing-feather-logo-icon_23758-199.jpg?semt=ais_hybrid&w=740&q=80" />
+            <h1 class="logo_title">Company</h1>
+        </div>
+
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            </ul>
+        </nav>
+    
+        <div class="actions">
+            <button class="btn">
+                <i class="fa-solid fa-camera"></i>
+                 Get Started
+            </button>
+
+               <button class="btn">
+                 Sign in
+            </button>
+        </div>
+
+        <!-- MOBILE VIEW -->
+         <button class="btn-ham">
+            <i class="fa-solid fa-bars"></i>
+         </button>
+
+         <!-- MOBILE MENU CONTENT -->
+         <div class="mobile-menu">
+                <button class="btn">
+                    <i class="fa-solid fa-camera"></i>
+                    Get Started
+                </button>
+
+                <button class="btn">
+                    Sign in
+                </button>
+                <nav>
+                    <ul class="navlist">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    </ul>
+                </nav>
+         </div>
+    </header>
+ 
+   <div>
+    
+   </div> 
+    
+</body>
+</html>

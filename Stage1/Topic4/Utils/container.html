@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body,footer{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 100%;
+            margin: 0 auto;
+            /* background-color: red; */
+        }
+
+        .content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        @media screen and (min-width:800px) {
+            .container{
+                width: 800px;
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            .container{
+                width: 1200px;
+            }
+        }
+    
+
+    </style>
+
+
+</head>
+    <body>
+
+        <header style="background-color: aqua;">
+            <div class="container">
+                <div class="content">
+                    <div class="logo">
+                        logo
+                    </div>
+                    <div class="nav"> nav</div>
+                    <div class="btn"> button</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container" style="height: 100vh;">
+            <section  class="about">
+                <h1>Main Content Area</h1>
+                <p>This is the main content area inside a responsive container.</p>
+            </section>
+             <section  class="about">
+                <h1>Main Content Area</h1>
+                <p>This is the main content area inside a responsive container.</p>
+            </section>
+             <section  class="about">
+                <h1>Main Content Area</h1> 
+                <p>This is the main content area inside a responsive container.</p>
+            </section>
+
+             <section  class="about">
+                <h1>Main Content Area</h1>
+                <p>This is the main content area inside a responsive container.</p>
+            </section>
+        </main>
+
+        <footer style="background-color: lightgray;height: 200px;">
+            <div class="container">
+                <div>Footer Content</div>
+            </div>
+        </footer>
+    </body>
+</html>

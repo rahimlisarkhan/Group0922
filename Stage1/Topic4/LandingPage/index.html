@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+  <body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#signinModal">Sign in</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <!-- HERO -->
+        <section class="hero">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img class="carousel-img w-100" src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8amF2YXNjcmlwdHxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="carousel-img w-100" src="https://i.redd.it/y99z7p80osa71.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="carousel-img w-100" src="https://wallpapercave.com/wp/wp14423541.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+     
+        <!-- WELCOME -->
+        <section class="py-5 px-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 ">
+                        <div class="mb-3 mb-lg-0">
+                            <h2>Welcome to Our Landing Page</h2>
+                            <p>This is a simple landing page created using Bootstrap 5. Explore the features and enjoy the responsive design!</p>
+                            <button class="btn btn-warning d-none d-sm-block">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://wpengine.com/wp-content/uploads/2021/07/jsheader.png" class="img-fluid" alt="Landing Page Image">
+                    </div>
+                </div>
+             
+            </div>
+        </section>
+
+        <!-- COURSES -->
+         <section class="py-5 px-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center">Our Courses</h2>
+                        <p class="text-center pb-5">Explore our wide range of courses designed to help you succeed.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="https://w0.peakpx.com/wallpaper/1019/788/HD-wallpaper-javascript-glitter-logo-programming-language-grid-metal-background-javascript-creative-programming-language-signs-javascript-logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">JS COURSE</h5>
+                                <p class="card-text">Learn JavaScript from scratch with our comprehensive course.</p>
+                                <a href="#" class="btn btn-warning">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="https://w0.peakpx.com/wallpaper/1019/788/HD-wallpaper-javascript-glitter-logo-programming-language-grid-metal-background-javascript-creative-programming-language-signs-javascript-logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">JS COURSE</h5>
+                                <p class="card-text">Learn JavaScript from scratch with our comprehensive course.</p>
+                                <a href="#" class="btn btn-warning">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="https://w0.peakpx.com/wallpaper/1019/788/HD-wallpaper-javascript-glitter-logo-programming-language-grid-metal-background-javascript-creative-programming-language-signs-javascript-logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">JS COURSE</h5>
+                                <p class="card-text">Learn JavaScript from scratch with our comprehensive course.</p>
+                                <a href="#" class="btn btn-warning">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                        <div class="card">
+                            <img src="https://w0.peakpx.com/wallpaper/1019/788/HD-wallpaper-javascript-glitter-logo-programming-language-grid-metal-background-javascript-creative-programming-language-signs-javascript-logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">JS COURSE</h5>
+                                <p class="card-text">Learn JavaScript from scratch with our comprehensive course.</p>
+                                <a href="#" class="btn btn-warning">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="bg-body-tertiary text-center py-5">
+            <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Sign in Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="signinModalLabel">Sign in</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                 <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="youremail@gmail.com">
+                  </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="********">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

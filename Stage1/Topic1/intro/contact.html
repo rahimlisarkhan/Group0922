@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tags</title>
+</head>
+<body>
+      <header>
+           <!-- Navigation -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./about.html">About</a>
+                </li>
+                <li>
+                    <a href="./team.html">Team</a>
+                </li>
+                <li>
+                    <a href="./contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="./galery.html">Galery</a>
+                </li>
+                <li>
+                    <a href="./blog.html">Blog</a>
+                </li>
+            </ul>
+        </nav>
+      </header>
+
+    <main>
+        <section>
+            <h1>Qeydiyyat Formu</h1>
+            <!-- Form -->
+            <form>
+                <!-- Text Input -->
+                <fieldset>
+                <legend>Esas</legend>
+                <div>
+                    <label for="fullname">Ad Soyad</label>
+                    <br/>
+                    <input id="fullname" type="text"  placeholder="Ad soyad"  />
+                    <br/>
+                    <br/>
+                </div>
+
+                <!-- Email Input -->
+                <div>
+                    <label for="userEmail">Email</label>
+                    <br/>
+                    <input id="userEmail" type="email" placeholder="Email adresi"  />
+                    <br/>
+                    <br/>
+                </div>
+
+                <!-- PASSWORD -->
+                <div>
+                    <label for="userPassword">Password</label>
+                    <br/>
+                    <input id="userPassword" type="password" placeholder="Sifreniz"  />
+                    <br/>
+                    <br/>
+                </div>
+
+                <!-- DATE -->
+                <div>
+                    <label for="birthday">Dogum tarixi</label>
+                    <br/>
+                    <input id="birthday" type="datetime-local"/>
+                    <br/>
+                    <br/>
+                </div>
+                </fieldset>
+                
+                <br/>
+                
+                <fieldset>
+                    <legend>Digerler</legend>
+                    <!-- COLOR -->
+                    <div>
+                        <label for="teamColor">Komanda rengi</label>
+                        <br/>
+                        <input id="teamColor" type="color"/>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <!-- FILES -->
+                    <div>
+                        <label for="profileImage">El bacariqlarini yukle</label>
+                        <br/>
+                        <input id="profileImage" type="file" multiple />
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <!-- CHECKBOX -->
+                    <div>
+                        <p>Bacariqlarinizi secin</p>
+                        <div>
+                            <label for="html">HTML</label>
+                            <input id="html" type="checkbox" />
+                            <br/>
+                        </div>
+                        <div>
+                            <label for="css">CSS</label>
+                            <input id="css" type="checkbox" />
+                            <br/>
+                        </div>
+                        <div>
+                            <label for="js">Javascript</label>
+                            <input id="js" type="checkbox" />
+                            <br/>
+                        </div>
+                    </div>
+
+
+                    <!-- RADIO -->
+                    <div>
+                        <p>Cins</p>
+                        <div>
+                            <label for="female">Qadin</label>
+                            <input id="female" type="radio" name="gender" />
+                            <br/>
+                        </div>
+                        <div>
+                            <label for="male">Kisi</label>
+                            <input id="male" type="radio" name="gender" />
+                            <br/>
+                        </div>
+                    </div>
+
+
+
+                    <!-- RANGE -->
+                    <div>
+                            <label for="female">Maas araligi</label>
+                            <input id="female" type="range" min="1500" max="4000"/>
+                            <br/>
+                            <br/>
+                    </div>
+
+
+
+                    <!-- OPTIONS -->
+                    <div>
+                            <label >Olke secin</label>
+                            <select>
+                                <option disabled >Olke secin</option>
+                                <option  >AZE</option>
+                                <option  >TR</option>
+                                <option  >USA</option>
+                            </select>
+                            <br/>
+                            <br/>
+                    </div>
+
+
+                    <!-- Text area -->
+                    <div>
+                        <label for="fullname">Elave qeydiniz</label>
+                        <br/>
+                        <textarea id="fullname" placeholder="Qeyd" rows="5" >
+                        </textarea>
+                        <br/>
+                        <br/>
+                    </div>
+                </fieldset>
+
+
+                <div>
+                    <button type="reset">Sifirla</button>
+                    <button type="submit">Gonder</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    
+</body>
+</html>
