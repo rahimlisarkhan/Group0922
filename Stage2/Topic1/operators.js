@@ -46,22 +46,20 @@
 
 // var branchProfit = appointmentPrice - employeeProfit
 
+// console.log("Umumi",appointmentPrice);
 // console.log("Isci maasi",employeeProfit);
 // console.log("Filial qazanci",branchProfit);
-
-
-
 
 
 
 // Assignment Operators
 // var a = 5
 
-// // a = a + 10
-// // a = a - 10
-// // a = a * 10
-// // a = a / 10
-// // a = a ** 10
+// a = a + 10
+// a = a - 10
+// a = a * 10
+// a = a / 10
+// a = a ** 10
 
 // a += 10
 // a -= 10
@@ -73,17 +71,30 @@
 
 
 // Comparison Operators
-var personalAge = 6;
-var accessAge = 5
+// var x = 6;
+// var y = 5
 
 // var result = x > 18 // false
 // var result = x > y // true
 // var resultAsef = x == y // true
 // var resultAsef = x === y // true
 // var resultAsef = x === y // true
-// var resultAsef = x != y // false
+// var resultAsef = x != y // true
 // var resultAsef = x !== y // false
 // var result = personalAge >= accessAge// false
-var result = personalAge <= accessAge// false
+// var result = personalAge <= accessAge// false
 
 console.log(result);
+
+
+// Logical Operators
+var age = 20
+var citizen = "Nigerian"
+
+// var result = age >= 18 && citizen == "Azerbaijan" //false
+// var result = age >= 18 && citizen != "Azerbaijan" // true
+// var result = age >= 18 || citizen != "Azerbaijan" // true
+// var result = age >= 18 || citizen == "Azerbaijan" //false
+
+// console.log("Result:",result);
+
