@@ -1,11 +1,8 @@
 
-
-
-var isStart = confirm("Do you want to start game?")
-var point = 0
+let isStart = confirm("Do you want to start game?")
+let point = 0
 
 console.log("isStart",isStart);
-
 
 if(isStart){
 
@@ -14,7 +11,8 @@ if(isStart){
 
     // if(parseInt(q1) === 4){
     if(q1 == 4){
-        point = point + 10
+        // point = point + 10
+        point+=10
         
         alert(`Congratulations!Your point is ${point} `)
         //...
@@ -23,7 +21,7 @@ if(isStart){
         var q2 = prompt("100 / 3 = ?") // 4
 
         if(q2 == "33.3" || q2  == "33.33"  || q2  == "33.333" || q2  == "33.3333" ){
-            point= point + 10
+            point+=10
             alert(`Congratulations!Your point is ${point} `)
 
             //....

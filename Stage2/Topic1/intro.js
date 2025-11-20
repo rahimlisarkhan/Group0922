@@ -23,3 +23,7 @@ var product2Img = null
 
 //Undefined
 var password = undefined
+
+const result = `My name is ${fullname}. I am ${age} years old. I have worked ${workingMonth} months.`
+
+console.log(result);
