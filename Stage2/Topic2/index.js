@@ -1,69 +1,40 @@
-// Methods
+// 1. Verilen cumlede eger cox uzundursa 30 symbol olsa sonuna ... elave et
+let sentence = "This is a very long sentence that might need to be truncated for display purposes.";
 
-let numbers = [2, 4, 6, 8, 10, 12, 10, 14,[15, 16],[17, 18]]
+// let strLength = sentence.length
+// let isLong = strLength >= 30
 
-// let result2 = numbers[8][0]
+let result = sentence.length >= 30 ? `${sentence.substring(0, 29).trim()}...`  : sentence
 
-// console.log(result2);
+// if(sentence.length >= 30){
+//     let shortText = sentence.substring(0, 29).trim()
+//     result = `${shortText}...`
+// }else{
+//     result = sentence
+// }
 
-// PUSH
-// numbers.push(101) // sona elave etmek
+console.log(result);
 
-// UNSHIFT
-// numbers.unshift(101) // evvele elave etmek
-// numbers.unshift(90) // evvele elave etmek
+// 2. Verilen sozu terse cevirin Input : tpircsavaj. Output: Javascript
 
-// SHIFT
-// numbers.shift() // evvelden silir
+let str = "tpircsavaj"
 
-// POP
-// numbers.pop()
-// let sildiyiniQaytardi =  numbers.pop() // sondan silmek
-// let lastIndex = numbers.length - 1
+// Cevirdik Arraya
+let strArr = str.split("")
 
-// SPLICE
-// numbers.splice(lastIndex - 3, 4) // istediyimiz sekilde sile bilirik
-// numbers.splice(1,2)
-// numbers.splice(2,null,"John","Marry","Ashley")
+// Tersine cevirib yeniden string etdik
+let result2 =  strArr.reverse().join("") // javascript
 
-// SLICE
-// let result = numbers.slice(1,5) // heqiqi yeni bir list
+// hemin stringin ilk herfini tutuduq
+let capitalLetter = result2[0]
 
-// let fruits = ["Apple","Pie"]
+// ilk herifi boyuk etdik
+let capitalUpperLetter = capitalLetter.toUpperCase()
 
+// qalan hisseni tutduq
+let subStr = result2.slice(1, result2.length)
 
-// CONCAT
-// let moreList = numbers.concat(fruits)
-// let numbers2 = numbers.concat() // ESL KOPYA
+let result3 = capitalUpperLetter + subStr
+// let result3 = capitalUpperLetter.concat(subStr)
 
-// numbers[0]= 1001
-// numbers.shift()
-// numbers.shift()
-// numbers.shift()
-// numbers.shift()
-
-
-// let result =  numbers.includes(500) // yoxlayirki element varmi
-// let result =  numbers.indexOf(10) // yoxlayirki element varmi: -1 veya index
-// let result =  numbers.lastIndexOf(10)// yoxlayirki en sonuncu element varmi: -1 veya index
-// let result =  numbers.join("")
-// let result =  numbers.join("")
-// let result =  numbers.flat(2)
-// numbers.reverse()
-
-
-// console.log("numbers2",numbers2);
-
-
-
-
-
-
-// LAST INDEX
-// let result = numbers[lastIndex]
-// console.log("lastIndex:",lastIndex);
-// console.log("result element:",result);
-
-
-
-console.log("numbers:",numbers);
+console.log(result3);
