@@ -95,28 +95,28 @@
     // howMuchILoveYou(7)
 
 
-// //SOLITION 4
+// SOLITION 4
 
     // (uefaEuro2016(['Germany', 'Ukraine'], [2, 0]), "At match Germany - Ukraine, Germany won!");
     // assert.strictEqual(uefaEuro2016(['Belgium', 'Italy'], [0, 2]), "At match Belgium - Italy, Italy won!");
     // assert.strictEqual(uefaEuro2016(['Portugal', 'Iceland'], [1, 1]), "At match Portugal - Iceland, teams played draw.");
 
-function uefaEuro2016(teams, scores){
-    let team1 = teams[0];
-    let team2 = teams[1];
+// function uefaEuro2016(teams, scores){
+//     let team1 = teams[0];
+//     let team2 = teams[1];
 
-    let score1 = scores[0];
-    let score2 = scores[1];
+//     let score1 = scores[0];
+//     let score2 = scores[1];
 
 
-    if(score1 > score2){
-        return `At match ${team1} - ${team2}, ${team1} won!`;
-    } else if (score2 > score1){
-        return `At match ${team1} - ${team2}, ${team2} won!`;
-    } else {
-        return `At match ${team1} - ${team2}, teams played draw.`;
-    }
+//     if(score1 > score2){
+//         return `At match ${team1} - ${team2}, ${team1} won!`;
+//     } else if (score2 > score1){
+//         return `At match ${team1} - ${team2}, ${team2} won!`;
+//     } else {
+//         return `At match ${team1} - ${team2}, teams played draw.`;
+//     }
 
-}
+// }
 
-uefaEuro2016(['Germany', 'Ukraine'], [2, 0])
+// uefaEuro2016(['Germany', 'Ukraine'], [2, 0])
