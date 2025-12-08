@@ -38,14 +38,15 @@
 //     return pi;
 // }
 
-// // A()
+// let netice =  A()
+
+// console.log(netice); // 3.14
 
 
 // function calc(num){
 //     let resultA = A(); // 3.14
 
 //     console.log("Result last is:", resultA * num);
-
 
 // }
 
@@ -109,32 +110,74 @@
 
 
 
+// function performOperation(num1, num2, operationCallback){
 
-function performOperation(num1, num2, operationCallback){
+//     let a = 10;
+//     let netice = operationCallback(num1, num2, a);
 
-    let a = 10;
-    let result = operationCallback(num1, num2, a);
+//     console.log("Result of the operation is:", netice);
+// }
 
-    console.log("Result of the operation is:", result);
+
+// function add(a, b, c){
+//     let result = a + b + c;
+//     return result;
+// }
+
+
+// let add = function(a, b, c){
+//     let result = a + b + c;
+//     return result;
+// }
+
+
+// performOperation(10, 5, add); // 15
+
+
+// function subtract(a, b, c){
+//     return a - b - c;
+// }
+
+// performOperation(10, 5, add); // 5
+// performOperation(10, 5, subtract); // 5
+
+
+// function multiplyBabek(a, b, c){
+//     return a * b * c;
+// }
+
+// function divideBabek(a, b, c){
+//     return a / b / c;
+// }
+
+// performOperation(10, 5, addBabek); // 15
+// performOperation(10, 5, subtractBabek); // 5
+// performOperation(10, 5, multiplyBabek); // 50
+// performOperation(10, 5, divideBabek); // 2
+
+
+function kofeAparati(coffeeType, clTerezi){
+
+    const hazirlamaVaxti = 20
+
+    const result = clTerezi(coffeeType, hazirlamaVaxti);
+
+    console.log("Sifarisiniz hazirdir:", result);
+
 }
 
-function addBabek(a, b, c){
-    return a + b + c;
+function terezi(coffeeType, hazirlamaVaxti){
+    return `${coffeeType} kofesi, ${hazirlamaVaxti} saniyeye hazirlanir.`
 }
 
-function subtractBabek(a, b, c){
-    return a - b - c;
+function terezi2(coffeeType, hazirlamaVaxti){
+    return `${coffeeType} kofesi, ${hazirlamaVaxti + 10} saniyeye hazirlanir.`
 }
 
-function multiplyBabek(a, b, c){
-    return a * b * c;
+function terezi3(coffeeType, hazirlamaVaxti){
+    return `${coffeeType} kofesi, ${hazirlamaVaxti + 5} saniyeye hazirlanir.`
 }
 
-function divideBabek(a, b, c){
-    return a / b / c;
-}
-
-performOperation(10, 5, addBabek); // 15
-performOperation(10, 5, subtractBabek); // 5
-performOperation(10, 5, multiplyBabek); // 50
-performOperation(10, 5, divideBabek); // 2
+kofeAparati("Espresso", terezi);
+kofeAparati("Latte", terezi2);
+kofeAparati("Cappuccino", terezi3);
