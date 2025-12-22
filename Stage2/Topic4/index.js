@@ -1,84 +1,41 @@
-// BANK ACCOUNT PERSONAL
 
 
-const BankAccount = {
-  name:null,
-  surname:null,
-  balance:0,
-  history:[],
-  card_number:null,
 
-  constructor:function(name, surname, balance){
 
-    this.name = name
-    this.surname = surname
-    this.balance = balance
+// let array = [1, 2, 3]
 
-    this.card_number = Math.round(Math.random() * 1000000000000000)
-    
-    const newAccount = {...this}
+// let [x, y, c]  = array // Array descructing
+// // let [x, y, c] = [1, 2, 3] // Array descructing
 
-    return newAccount
-  },
+// // let x = array[0]
+// // let y = array[1]
+// // let c = array[2]
 
-  addBalance:function(amount){
+// let result = x + y + c
 
-    this.balance += amount
-    // this.history.push(`+${amount}`)
-      this.history = [`+${amount}`, ...this.history]
-      
-  },
 
-  widhrawBalance:function(amount){
+let myObj = {
+  name:"John",
+  age:34,
+  address:"Lorem ipsum"
+}
 
-    if(this.balance > amount){
-      this.balance = this.balance - amount
-      
-      this.history = [`-${amount}`, ...this.history]
-    }else{
-      console.log("Invalid balance!");
-    }
-
-  },
-
-  showBalance:function(){
-
-    console.log("====================");
-    console.log("Fullname:",this.name + " " + this.surname);
-    console.log("Balance:", this.balance);
-    console.log("====================");
-    
-
-  }
-
+let homeObj = {
+  name:"John",
+  age:34,
+  address:"Lorem ipsum"
 }
 
 
-const babekAccount = BankAccount.constructor("Babek", "Ceferov", 1000) // yeni object
-const kenulAccount = BankAccount.constructor("Kenul", "Samedova", 1000)
 
-babekAccount.addBalance(200)
-babekAccount.addBalance(200)
+let {name, age, address, position = "N/A"} = myObj
+let {name:homeName, age:homeAge, address:homeAddress} = homeObj
 
-babekAccount.showBalance()
+console.log("position",position);
+console.log("address",address);
+console.log("age",age);
+console.log("name",name);
 
-babekAccount.widhrawBalance(100)
-babekAccount.showBalance()
-
-babekAccount.widhrawBalance(2100)
-babekAccount.showBalance()
-
-
-
-console.log(babekAccount);
-
-
-kenulAccount.addBalance(300)
-kenulAccount.addBalance(100)
-
-kenulAccount.showBalance()
-
-kenulAccount.widhrawBalance(300)
-kenulAccount.showBalance()
-
-console.log(kenulAccount);
+// let name = myObj.name
+// let age = myObj.age
+// let address = myObj.address
