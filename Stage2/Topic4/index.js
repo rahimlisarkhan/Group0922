@@ -122,8 +122,8 @@ const DateHelper = {
 
 // const createdAt = "2025-12-25T14:46:00"
 // const lastMonth = new Date(createdAt)
-// const currentDate = new Date()
-// // const formattedDate = DateHelper.formatDateLong(currentDate)
+const currentDate = new Date()
+const formattedDate = DateHelper.formatDateLong(currentDate)
 // // const formattedDate = DateHelper.formatDate(currentDate)
 // // const formatTime = DateHelper.formatTime(currentDate)
 
