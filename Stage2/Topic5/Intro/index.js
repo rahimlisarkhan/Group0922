@@ -1,48 +1,95 @@
-// Elements
-const btnShow = document.querySelector("#btnShow")
-const title = document.querySelector("#title")
-const menuBar = document.querySelector("#menuBar")
-const formBtn = document.querySelector("#formBtn")
+// Mouse events
 
-const userData = []
+// 1. Click event
 
-//Events
-btnShow.addEventListener("click",function(){
-    console.log("Say hello");
-    // title.classList.remove("bg-danger")
-    title.innerHTML = "Hello!"
+// 2. Double click event
 
-    const isNotShow = menuBar.classList.contains("d-none")
-    if(isNotShow){
-        menuBar.classList.remove("d-none")
-    }else{
-        menuBar.classList.add("d-none")
-    }
+// 3. Mouse over event
 
-})
+// 4. Mouse out event
 
-formBtn.addEventListener("click",function(){
+// Keyboard events
 
-    const inputEl = document.querySelector("#fullname")
-    const listEl = document.querySelector("#listEl")
+// 1. Key down event
 
-    const userValue = inputEl.value
+// 2. Key up event
 
-    userData.push(userValue)
+// 3. Key press event
 
+// Focus events
+// 1. Focus & Blur & Change event
+// const inputEl = document.querySelector("#inputEl")
+
+// inputEl.addEventListener("focus",function(){
+
+//     console.log("Input focused");
+
+//     inputEl.nextElementSibling.classList.remove("d-none");
+// })
+
+// inputEl.addEventListener("blur",function(){
+//     console.log("Input blurred");
+
+//     inputEl.nextElementSibling.classList.add("d-none");
+// })
+
+
+// inputEl.addEventListener("input",function(e){
+//     console.log("Input changed:",e);
+
+//     inputEl.nextElementSibling.nextElementSibling.innerHTML = `You typed: ${inputEl.value.length} characters`
+//     inputEl.nextElementSibling.nextElementSibling.style.color = inputEl.value.length > 15 ? "green" : "red"
+
+// })
+
+
+// inputEl.addEventListener("focus",function(){
+
+//     console.log("Input focused");
+
+//     inputEl.nextElementSibling.classList.remove("d-none");
+// })
+
+// inputEl.addEventListener("blur",function(){
+//     console.log("Input blurred");
+
+//     inputEl.nextElementSibling.classList.add("d-none");
+// })
+
+
+
+// Keyboard events
+// inputEl.addEventListener("keyup",function(e){
+// inputEl.addEventListener("keydown",function(e){
+// inputEl.addEventListener("keypress",function(e){
+//     const isEnter = e.key === "Enter"
+
+//     console.log("e",e);
     
+//     if(isEnter){
+//         console.log("Form submitted");
+//     }
 
-    const content = userData.map(item => `<li class="text-danger">${item}</li>`)
+// })
 
-    console.log("content",content);
 
-    listEl.innerHTML = content.join("")
 
-    // listEl.innerHTML = `<li class="text-danger">Test1</li> <li class="text-danger">Test2</li> <li class="text-danger">Test3</li>`
+// window.addEventListener("keypress",function(e){
+//     console.log(e);
+// })
+
+const boxEl = document.querySelector("#boxEl")
+const changeEl = document.querySelector("#changeEl")
+
+boxEl.addEventListener("mousemove",function(e){
+    // boxEl.innerHTML = `X: ${e.offsetX} Y: ${e.offsetY}`
+
+    changeEl.classList.remove("d-none")
 
 })
 
+boxEl.addEventListener("mouseout",function(e){
 
-// function sayHello(){
-//     console.log("inline click");
-// }
+    changeEl.classList.add("d-none")
+})
+

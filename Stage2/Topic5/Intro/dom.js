@@ -2,6 +2,9 @@
 const titleEl = document.querySelector("#title")
 // // const titleEl = document.getElementById("title")
 
+// titleEl.nextElementSibling.style.padding = "20px"
+// titleEl.parentElement.style.backgroundColor = "lightgray"
+
 
 // // 2. Changing HTML Elements
 // titleEl.innerHTML = "Salam"
@@ -38,7 +41,6 @@ const titleEl = document.querySelector("#title")
 // spanTag.style.fontSize = "20px"
 
 // document.body.appendChild(spanTag)
-
 // document.body.removeChild(titleEl)
 
 // console.log(spanTag);
