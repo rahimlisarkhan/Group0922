@@ -29,7 +29,6 @@ btnShow.addEventListener("click",function(){
 
 })
 
-
 function addItem(){
 
     const listEl = document.querySelector("#listEl")
