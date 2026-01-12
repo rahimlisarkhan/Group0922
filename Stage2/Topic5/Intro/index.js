@@ -1,95 +1,145 @@
-// Mouse events
 
-// 1. Click event
 
-// 2. Double click event
+console.log(window.navigator);
 
-// 3. Mouse over event
 
-// 4. Mouse out event
+// SCREEN 
+// window.screen.orientation.lock("portrait-primary").then(function(){
+//     console.log("Orientation locked to portrait-primary");
+// }).catch(function(error){
+//     console.log("Error locking orientation:", error);
+// });
 
-// Keyboard events
 
-// 1. Key down event
+// screen.orientation.addEventListener("change",function(){
+//     console.log("Orientation changed to:", screen.orientation.type);
 
-// 2. Key up event
+//     if(screen.orientation.type.startsWith("portrait")){
+//         console.log("Portrait mode");
+//     } else if(screen.orientation.type.startsWith("landscape")){
+//         console.log("Landscape mode");
+        
+//     }
+// });
 
-// 3. Key press event
+// window.alert("Hello from JS file!")
 
-// Focus events
-// 1. Focus & Blur & Change event
-// const inputEl = document.querySelector("#inputEl")
 
-// inputEl.addEventListener("focus",function(){
+// if(window.innerWidth < 600){
+//     console.log("Mobile device");
+// } else {
+//     console.log("Desktop device");
+// }
 
-//     console.log("Input focused");
+// LOCATION
+// console.log("Current URL:", window.location.href);
+// console.log("Hostname:", window.location.hostname);
+// console.log("Pathname:", window.location.pathname);
+// console.log("Protocol:", window.location.protocol);
 
-//     inputEl.nextElementSibling.classList.remove("d-none");
+// if(window.location.pathname.includes("index.html")){
+//     console.log("You are on the Intro page");
+//     document.querySelector("#searchInput").classList.remove("d-none")
+
+// } else {
+//     console.log("You are on a different page");
+//     document.querySelector("#searchInput").classList.add("d-none")
+// }
+
+
+const btnEl = document.querySelector("#reloadBtn")
+
+// reloadBtn.addEventListener("click",function(){
+//     // Reload the current page
+//     // window.location.reload()
+//     // window.location.href = "https://www.example.com"
 // })
 
-// inputEl.addEventListener("blur",function(){
-//     console.log("Input blurred");
 
-//     inputEl.nextElementSibling.classList.add("d-none");
+//HISTORY
+// console.log("History length:", window.history.length);
+
+// const backBtn = document.querySelector("#backBtn")
+// const forwardBtn = document.querySelector("#forwardBtn")
+
+// btnEl.addEventListener("click",function(){
+//     window.history.back()
+// })
+
+// forwardBtn.addEventListener("click",function(){
+//     window.history.forward()
 // })
 
 
-// inputEl.addEventListener("input",function(e){
-//     console.log("Input changed:",e);
-
-//     inputEl.nextElementSibling.nextElementSibling.innerHTML = `You typed: ${inputEl.value.length} characters`
-//     inputEl.nextElementSibling.nextElementSibling.style.color = inputEl.value.length > 15 ? "green" : "red"
-
-// })
+//NAVIGATOR
 
 
-// inputEl.addEventListener("focus",function(){
+// const result = window.navigator.onLine ? "Online" : "Offline"
 
-//     console.log("Input focused");
-
-//     inputEl.nextElementSibling.classList.remove("d-none");
-// })
-
-// inputEl.addEventListener("blur",function(){
-//     console.log("Input blurred");
-
-//     inputEl.nextElementSibling.classList.add("d-none");
-// })
+// console.log("Browser  internet:", result);
 
 
+// const batteryContentEl = document.querySelector("#batteryContent")
+// const progessLineEl = document.querySelector("#progessLine")
+// const batteryPromise = navigator.getBattery() // Promise
 
-// Keyboard events
-// inputEl.addEventListener("keyup",function(e){
-// inputEl.addEventListener("keydown",function(e){
-// inputEl.addEventListener("keypress",function(e){
-//     const isEnter = e.key === "Enter"
 
-//     console.log("e",e);
-    
-//     if(isEnter){
-//         console.log("Form submitted");
+// batteryPromise.then((data)=>{
+
+//     const batteryLevel = Math.floor(data.level * 100)
+
+//     progessLineEl.style.width = `${batteryLevel}%`
+
+//     if(data.charging){
+//         progessLineEl.classList.add("progress-bar-striped")
+//     }else{
+//         progessLineEl.classList.remove("progress-bar-striped")
 //     }
 
+//     batteryContentEl.innerHTML = `
+//         <p>Battery Level: ${batteryLevel}%</p>
+//         <p>Charging: ${data.charging ? "Yes" : "No"}</p>
+//     `
+//     console.log("Battery data fetched",data);
+    
+// })
+
+// navigator.geolocation.getCurrentPosition((data)=>{
+//     console.log("Geolocation permission granted",data);
+// })
+
+
+// window.addEventListener("online",function(){
+//     console.log("You are back online");
+// })
+
+
+// window.addEventListener("offline",function(){
+//     console.log("You are now offline");
 // })
 
 
 
-// window.addEventListener("keypress",function(e){
-//     console.log(e);
+// window.addEventListener("scroll",function(e){
+//     const scrollTop = window.scrollY
+
+//     console.log("scrollTop",scrollTop);
+    
+//     // console.log("Scroll Top:",e);
+
+//     // const headerEl = document.querySelector("#headerEl")
+
+//     // if(scrollTop > 50){
+//     //     headerEl.classList.add("bg-dark","text-white","py-3","shadow-lg")
+//     // } else {
+//     //     headerEl.classList.remove("bg-dark","text-white","py-3","shadow-lg")
+//     // }
+
 // })
 
-const boxEl = document.querySelector("#boxEl")
-const changeEl = document.querySelector("#changeEl")
 
-boxEl.addEventListener("mousemove",function(e){
-    // boxEl.innerHTML = `X: ${e.offsetX} Y: ${e.offsetY}`
+// window.addEventListener("keydown",function(e){
+//     console.log("e key",e.key);
+//     console.log("e code",e.code);
 
-    changeEl.classList.remove("d-none")
-
-})
-
-boxEl.addEventListener("mouseout",function(e){
-
-    changeEl.classList.add("d-none")
-})
-
+// })
