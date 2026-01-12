@@ -111,6 +111,7 @@ window.addEventListener("keydown",function(e){
 
         playerImg1.src = images[userChoose]
         playerImg2.src = images[compChoose]
+        
     }else{
         point2++
 
