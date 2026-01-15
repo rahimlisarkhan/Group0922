@@ -128,3 +128,31 @@ window.addEventListener("keydown",function(e){
     }
 
 })
+
+
+
+
+playerPoint1.style.color = "white"
+playerPoint1.style.backgroundColor = "red"
+
+
+// jQuery.style(playerPoint2, {
+//     color:"white",
+//     backgroundColor:"blue",
+//     padding:"5px 10px",
+//     borderRadius:"5px"
+// })
+
+
+
+// const jQuery = {
+//     getElement:function(selector){
+//         return document.querySelector(selector)
+//     },
+
+//     style:function( element, styles = {}){
+//         for(const style in styles){
+//             element.style[style] = styles[style]
+//         }
+//     }
+// }

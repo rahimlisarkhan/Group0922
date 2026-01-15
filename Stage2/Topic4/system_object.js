@@ -82,3 +82,4 @@ const babekAccount = BankAccount.constructor("Babek", "Ceferov", 1000) // yeni o
 // kenulAccount.showBalance()
 
 // console.log(kenulAccount);
+
