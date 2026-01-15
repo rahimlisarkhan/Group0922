@@ -9,6 +9,7 @@ const StopWatch = {
 
     startTime: 0,
     timer: null,
+    timerTimeout: null,
 
     start: function(){
 
@@ -29,13 +30,13 @@ const StopWatch = {
     },
 
     show:function(){
-        timeDisplay.innerHTML = this.generateTimeFormat(this.startTime);
+        timeDisplay.innerHTML = this.generateTimeFormat();
     },
 
-    generateTimeFormat:function(totalMilliseconds){
-        const minutes = Math.floor((totalMilliseconds % 3600000) / 60000);
-        const seconds = Math.floor((totalMilliseconds % 60000) / 1000);
-        const milliseconds = Math.floor((totalMilliseconds % 1000) / 10);
+    generateTimeFormat:function(){
+        const minutes = Math.floor((this.startTime % 3600000) / 60000);
+        const seconds = Math.floor((this.startTime % 60000) / 1000);
+        const milliseconds = Math.floor((this.startTime % 1000) / 10);
 
         const formattedMinutes = String(minutes).padStart(2, '0');
         const formattedSeconds = String(seconds).padStart(2, '0');
@@ -47,7 +48,11 @@ const StopWatch = {
     reset:function(){
         this.startTime = 0;
         this.stop();
-      
+    
+       clearTimeout(this.timerTimeout);
+       this.timerTimeout = setTimeout(() => {
+           alert("Stopwatch has been reset!");
+        }, 2000);
     }
 
 }
@@ -63,5 +68,4 @@ stopBtn.addEventListener('click', function(){
 
 resetBtn.addEventListener('click', function(){
     StopWatch.reset();
-    timeDisplay.textContent = "00:00:00";
 });
