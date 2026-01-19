@@ -57,7 +57,6 @@ const StopWatch = {
 
 }
 
-
 startBtn.addEventListener('click', function(){
     StopWatch.start();
 });

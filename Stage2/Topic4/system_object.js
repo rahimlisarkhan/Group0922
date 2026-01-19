@@ -55,7 +55,7 @@ const BankAccount = {
 
 
 const babekAccount = BankAccount.constructor("Babek", "Ceferov", 1000) // yeni object
-// const kenulAccount = BankAccount.constructor("Kenul", "Samedova", 1000)
+const kenulAccount = BankAccount.constructor("Kenul", "Samedova", 1000)
 
 // babekAccount.addBalance(200)
 // babekAccount.addBalance(200)
