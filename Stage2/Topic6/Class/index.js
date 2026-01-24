@@ -108,11 +108,7 @@ const changan = new ElectricCar("Changan", "Q07", 2025, 75)
 const tesla = new ElectricCar("Tesla", "Model S", 2024, 100)
 
 
-
-changan.
-
 // changan.monitorBattery()
-
 
 // changan.setBatteryCapacity(85)
 changan.battery = 85
