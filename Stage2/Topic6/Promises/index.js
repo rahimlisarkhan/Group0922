@@ -127,17 +127,25 @@ function showError(err){
 
 const userPromise = fetch("https://jsonplaceholder.typicode.com/users"); //return a promise
 
+const loadingContent = document.querySelector("#loadingContent");
+
 console.log("userPromise",userPromise);
 
 
+loadingContent.style.display = "block";
 userPromise.then((response) => {
 
     console.log(response);
-    return response.json(); // Parse JSON data // second promise
+
+    const secondPromise = response.json(); // return another promise
+
+    
+    return secondPromise; // Parse JSON data // second promise
 
 }).then((data) => {
     console.log("Users data:", data);
     renderElements(data);
+    // loading = false;
 
 }).catch((err) => {
     console.log("Promise rejected:", err);
@@ -145,7 +153,10 @@ userPromise.then((response) => {
     alert("Unable to fetch users");
 }).finally(() => {
     console.log("Promise finally");
+    loadingContent.style.display = "none";
+
 })
+
 
 
 
@@ -180,3 +191,4 @@ userPromise.then((response) => {
 //         }
 //     }
 // }
+

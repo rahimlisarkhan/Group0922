@@ -1,0 +1,229 @@
+[
+    {
+        "name": "United States",
+        "capital": "Washington, D.C.",
+        "population": 331002651,
+        "languages": [
+            "English"
+        ],
+        "cities": [
+            "New York",
+            "Los Angeles",
+            "Chicago",
+            "Houston",
+            "Phoenix"
+        ]
+    },
+    {
+        "name": "Canada",
+        "capital": "Ottawa",
+        "population": 37742154,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "cities": [
+            "Toronto",
+            "Montreal",
+            "Vancouver",
+            "Calgary",
+            "Ottawa"
+        ]
+    },
+    {
+        "name": "Mexico",
+        "capital": "Mexico City",
+        "population": 128932753,
+        "languages": [
+            "Spanish"
+        ],
+        "cities": [
+            "Mexico City",
+            "Guadalajara",
+            "Monterrey",
+            "Puebla",
+            "Tijuana"
+        ]
+    },
+    {
+        "name": "Brazil",
+        "capital": "Brasília",
+        "population": 212559417,
+        "languages": [
+            "Portuguese"
+        ],
+        "cities": [
+            "São Paulo",
+            "Rio de Janeiro",
+            "Brasília",
+            "Salvador",
+            "Fortaleza"
+        ]
+    },
+    {
+        "name": "United Kingdom",
+        "capital": "London",
+        "population": 67886011,
+        "languages": [
+            "English"
+        ],
+        "cities": [
+            "London",
+            "Birmingham",
+            "Manchester",
+            "Leeds",
+            "Glasgow"
+        ]
+    },
+    {
+        "name": "France",
+        "capital": "Paris",
+        "population": 65273511,
+        "languages": [
+            "French"
+        ],
+        "cities": [
+            "Paris",
+            "Marseille",
+            "Lyon",
+            "Toulouse",
+            "Nice"
+        ]
+    },
+    {
+        "name": "Germany",
+        "capital": "Berlin",
+        "population": 83783942,
+        "languages": [
+            "German"
+        ],
+        "cities": [
+            "Berlin",
+            "Hamburg",
+            "Munich",
+            "Cologne",
+            "Frankfurt"
+        ]
+    },
+    {
+        "name": "Italy",
+        "capital": "Rome",
+        "population": 60461826,
+        "languages": [
+            "Italian"
+        ],
+        "cities": [
+            "Rome",
+            "Milan",
+            "Naples",
+            "Turin",
+            "Palermo"
+        ]
+    },
+    {
+        "name": "Spain",
+        "capital": "Madrid",
+        "population": 46754778,
+        "languages": [
+            "Spanish"
+        ],
+        "cities": [
+            "Madrid",
+            "Barcelona",
+            "Valencia",
+            "Seville",
+            "Zaragoza"
+        ]
+    },
+    {
+        "name": "Japan",
+        "capital": "Tokyo",
+        "population": 126476461,
+        "languages": [
+            "Japanese"
+        ],
+        "cities": [
+            "Tokyo",
+            "Yokohama",
+            "Osaka",
+            "Nagoya",
+            "Sapporo"
+        ]
+    },
+    {
+        "name": "China",
+        "capital": "Beijing",
+        "population": 1439323776,
+        "languages": [
+            "Mandarin"
+        ],
+        "cities": [
+            "Shanghai",
+            "Beijing",
+            "Guangzhou",
+            "Shenzhen",
+            "Chengdu"
+        ]
+    },
+    {
+        "name": "India",
+        "capital": "New Delhi",
+        "population": 1380004385,
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "cities": [
+            "Mumbai",
+            "Delhi",
+            "Bangalore",
+            "Hyderabad",
+            "Chennai"
+        ]
+    },
+    {
+        "name": "Australia",
+        "capital": "Canberra",
+        "population": 25499884,
+        "languages": [
+            "English"
+        ],
+        "cities": [
+            "Sydney",
+            "Melbourne",
+            "Brisbane",
+            "Perth",
+            "Adelaide"
+        ]
+    },
+    {
+        "name": "Russia",
+        "capital": "Moscow",
+        "population": 145934462,
+        "languages": [
+            "Russian"
+        ],
+        "cities": [
+            "Moscow",
+            "Saint Petersburg",
+            "Novosibirsk",
+            "Yekaterinburg",
+            "Kazan"
+        ]
+    },
+    {
+        "name": "South Korea",
+        "capital": "Seoul",
+        "population": 51269185,
+        "languages": [
+            "Korean"
+        ],
+        "cities": [
+            "Seoul",
+            "Busan",
+            "Incheon",
+            "Daegu",
+            "Daejeon"
+        ]
+    }
+]
