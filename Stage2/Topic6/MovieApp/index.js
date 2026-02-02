@@ -65,7 +65,6 @@ async function getMovies(){
 
 function renderMovies(movieData) {
 
-
     console.log("movieData",movieData);
 
     if(!movieData || movieData.length === 0) {
@@ -92,8 +91,6 @@ function renderMovies(movieData) {
 
 
 }
-
-
 
 
 // const age =  18

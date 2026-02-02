@@ -98,3 +98,89 @@
 
 
 
+
+
+// function A(n){
+//     if(n <= 0){
+//         return 0;
+//     }
+//     console.log("A called with n =", n);
+//     return n + A(n - 1);
+// }
+
+
+// A(5)
+
+
+
+// Recursion Example: Factorial
+function factorial(n){
+
+    if(n <= 1){
+        return 1;
+    }
+
+    const result = n * factorial(n - 1)
+
+    return result;
+}
+
+
+// const netice = factorial(5) 
+
+// console.log(netice);
+
+// 5 * factorial(4)
+// 5 * 4 * factorial(3)
+// 5 * 4 * 3 * factorial(2)
+// 5 * 4 * 3 * 2 * factorial(1)
+// 5 * 4 * 3 * 2 * 1
+
+// Recursion Example: Children country
+
+const countries = [
+    {
+        name: "Azerbaijan",
+        children: [
+            { name: "Yevlax", children: [] },
+            {
+                name: "Baki",
+                children: [
+                    { name: "Xetai", children: [] },
+                    { name: "Sebail", children: [] },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Turkiye",
+        children: [
+            { name: "Istanbul", children: [] },
+            { name: "Ankara", children: [{
+                name: "Cankaya", children: []
+            }] },
+        ],
+    },
+];
+
+
+function printCountries(list){
+    
+
+    for (let i = 0; i < list.length; i++) {
+        const item = list[i];
+    
+        console.log("----");
+        console.log(item.name);
+        console.log("----");
+
+        if(item.children.length > 0){
+            printCountries(item.children);
+        }
+    
+    }
+
+}
+
+
+printCountries(countries);
