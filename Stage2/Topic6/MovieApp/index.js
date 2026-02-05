@@ -25,7 +25,17 @@ async function getMovies(){
     
        loadingIndicator.style.display = "block";
        
-       const response = await fetch(url) // A
+
+       const options = {
+        method: "GET", // READ CREATE UPDATE DELETE 
+        headers: {
+            "Content-Type": "application/json",
+            // "Authorization": "Bearer 1234567890",
+            // "X-RapidAPI-Key": "1234567890",
+        }
+       }
+
+       const response = await fetch(url, options) // A
 
 
 
@@ -88,7 +98,6 @@ function renderMovies(movieData) {
     }).join("");
 
     movileList.innerHTML = content;
-
 
 }
 
