@@ -6,11 +6,29 @@ const defaultImage = "https://images.unsplash.com/photo-1499750310107-5fef28a666
 const blogContainer = document.getElementById('blogContainer');
 const emptyState = document.getElementById('emptyState');
 const blogForm = document.getElementById('blogForm');
-const blogModal = new bootstrap.Modal(document.getElementById('blogModal'));
-const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+
+const createBlogBtn = document.getElementById('createBlogBtn');
+const saveBtn = document.getElementById('saveBtn');
+
+const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+const modalContentDetail = document.getElementById('blogModal')
+const blogModal = new bootstrap.Modal(modalContentDetail);
+
+const modalContentDelete = document.getElementById('deleteModal')
+const deleteModal = new bootstrap.Modal(modalContentDelete);
+
+const blogModalLabel = document.getElementById('blogModalLabel');
+
+
+// Form fields
+const titleEl = document.getElementById('blogTitle');
+const bodyEl = document.getElementById('blogBody');
+const imageEl = document.getElementById('blogImage');
 
 
 let currentBlogId = null;
+let isEdit = false;
 
 // Render all blog cards
 async function renderBlogs() {
@@ -38,10 +56,8 @@ async function renderBlogs() {
             return `
              <div class="col-md-6 col-lg-4">
                 <div class="card blog-card h-100 shadow-sm">
-                    <img src="${defaultImage}" 
-                        class="card-img-top blog-img" 
-                        alt="${blog.title}"
-                        onerror="this.src='${defaultImage}'">
+                    <img src="${blog?.url || defaultImage}" 
+                        class="card-img-top blog-img">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title blog-title">${blog.title}</h5>
                         <p class="card-text blog-body flex-grow-1">${blog.body}</p>
@@ -70,64 +86,110 @@ async function renderBlogs() {
 
 // Open modal for creating a new blog
 function openCreateModal() {
-    document.getElementById('blogModalLabel').textContent = 'Create New Blog';
-    document.getElementById('blogId').value = '';
-    document.getElementById('blogTitle').value = '';
-    document.getElementById('blogBody').value = '';
-    document.getElementById('blogImage').value = '';
+    blogModalLabel.textContent = 'Create New Blog';
+    blogModal.show()
+    isEdit = false;
 }
 
 // Open modal for editing an existing blog
-function openEditModal(id) {
-    const blog = blogs.find(b => b.id === id);
-    if (!blog) return;
-    
-    document.getElementById('blogModalLabel').textContent = 'Edit Blog';
-    document.getElementById('blogId').value = blog.id;
-    document.getElementById('blogTitle').value = blog.title;
-    document.getElementById('blogBody').value = blog.body;
-    document.getElementById('blogImage').value = blog.image || '';
-    
-    blogModal.show();
+async function openEditModal(id) {
+
+        try{
+            isEdit = true;
+            currentBlogId = id;
+            blogModalLabel.textContent = 'Edit Blog';
+
+
+            blogModal.show();
+
+            const url = `https://blog-api-t6u0.onrender.com/posts/${id}`
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+
+            const response = await fetch(url, options)
+
+            const data = await response.json()
+
+            console.log("data",data);
+
+            titleEl.value = data.title;
+            bodyEl.value = data.body;
+            imageEl.value = data.url || '';
+
+        }catch(error){
+            alert('Failed to load blog details. Please try again later.');
+        }
+
 }
 
 // Save blog (create or update)
-function saveBlog() {
-    const id = document.getElementById('blogId').value;
-    const title = document.getElementById('blogTitle').value.trim();
-    const body = document.getElementById('blogBody').value.trim();
-    const image = document.getElementById('blogImage').value.trim();
+async function saveBlog() {
+
+    try{
+    
+        const title = titleEl.value.trim();
+        const body = bodyEl.value.trim();
+        const url = imageEl.value.trim();
     
     // Validation
-    if (!title || !body) {
+    if (!title || !body) { // edge case: title or body is empty
         alert('Please fill in both title and body!');
         return;
     }
-    
-    if (id) {
-        // Update existing blog
-        const blogIndex = blogs.findIndex(b => b.id === parseInt(id));
-        if (blogIndex !== -1) {
-            blogs[blogIndex] = {
-                ...blogs[blogIndex],
-                title,
-                body,
-                image: image || defaultImage
-            };
-        }
-    } else {
         // Create new blog
-        const newBlog = {
-            id: Date.now(), // Use timestamp as unique ID
+        const payload = {
             title,
             body,
-            image: image || defaultImage
+            url
         };
-        blogs.unshift(newBlog); // Add to beginning of array
+
+        console.log("payload",payload);
+
+
+        if(isEdit){
+            const url = `https://blog-api-t6u0.onrender.com/posts/${currentBlogId}`
+
+            const options = {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }
+
+            await fetch(url, options)
+
+        }else{ // Create new blog
+
+            const url = `https://blog-api-t6u0.onrender.com/posts`
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }
+
+            await fetch(url, options)
+
+        }
+
+       titleEl.value = '';
+       bodyEl.value = '';
+       imageEl.value = '';
+
+        blogModal.hide();
+        renderBlogs();
+
+       }catch(error){
+        alert('Failed to save blog. Please try again later.');
     }
-    
-    blogModal.hide();
-    renderBlogs();
 }
 
 // Open delete confirmation modal
@@ -153,20 +215,51 @@ async function deleteBlog() {
 
         await fetch(url, options)
 
-        deleteModal.hide();
         renderBlogs();
+        deleteModal.hide();
 
     }catch(error){
         alert('Failed to delete blog. Please try again later.');
+        // window.location.href = '/404.html';
     }
 }
 
 // Event listener for delete confirmation
-document.getElementById('confirmDeleteBtn').addEventListener('click', deleteBlog);
+confirmDeleteBtn.addEventListener('click', deleteBlog);
+createBlogBtn.addEventListener('click', openCreateModal);
+saveBtn.addEventListener('click', saveBlog);
 
 renderBlogs()
 
 
 
+// async function getDatas(){
 
+// try{
+//     const posts = fetch('https://jsonplaceholder.typicode.com/posts')
+//     const users = fetch('https://jsonplaceholder.typicode.com/users')
+//     const albums = fetch('https://jsonplaceholder.typicode.com/albums')
+
+//     const [postResult, userResult, albumResult] = await Promise.allSettled([
+//         posts, users, albums])
+    
+//     const [postData, userData, albumData] = await Promise.allSettled([
+//         postResult.value.json(),
+//         userResult.value.json(),
+//         albumResult.value.json()
+//     ])
+
+//     console.log("postData",postData);
+//     console.log("userData",userData);
+//     console.log("albumData",albumData);
+    
+
+//     }catch(error){
+
+
+//     }
+
+// }
+
+// getDatas()
 
