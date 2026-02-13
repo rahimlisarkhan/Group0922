@@ -11,7 +11,12 @@ const inputEl = document.querySelector("#fullname")
 // title.parentElement.style.padding = "20px"
 // title.parentElement.style.backgroundColor = "lightgray"
 
-const data = []
+const localData = localStorage.getItem("list")
+
+const data = localData ? JSON.parse(localData) : []
+
+console.log("data",data);
+
 
 //Events
 btnShow.addEventListener("click",function(){
@@ -37,12 +42,19 @@ function addItem(){
 
     data.push(userValue)
 
+    localStorage.setItem("list", JSON.stringify(data))
+
     inputEl.value = ""
 
+    renderList()
+
+}
+
+
+function renderList(){
     const contentArray = data.map(item => `<li class="text-danger">${item}</li>`).join("")
 
     listEl.innerHTML = contentArray
-
 }
 
 inputEl.addEventListener("keydown",function(e){
@@ -80,3 +92,5 @@ title.addEventListener("mouseover",function(){
 // function test(){
 //     console.log("Test function");
 // }
+
+renderList()
