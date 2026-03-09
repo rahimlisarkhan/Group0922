@@ -1,23 +1,24 @@
 
-import './App.css'
-import { Navbar } from './Navbar'
+// import { Button } from './components/Button'
+import { Header } from './components/Header'
+import { AboutUs } from './components/AboutUs'
+import { Products } from './components/Products'
+import { ContactUs } from './components/ContactUs'
+import { Footer } from './components/Footer'
+import { Container } from './components/Container'
 
 export function App() {
 
   return (
     <>
-      <div>
-        Salam
-      </div>
-      <Navbar/>
-      <Navbar/>
-      <Navbar/>
-      <Navbar/>
-      <Navbar/>
-      <Navbar/>
-      <div>
-        Sagol
-      </div>
+      <Header />
+      <Container>
+        <AboutUs />
+        <Products />
+        <ContactUs />
+        <Products />
+      </Container>
+      <Footer />
     </>
 
   )

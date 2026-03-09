@@ -4,7 +4,7 @@ export function Navbar() {
 
   return (
     <div>
-      Navbar
+      Navbaraaaaaa
     </div>
   )
 }
