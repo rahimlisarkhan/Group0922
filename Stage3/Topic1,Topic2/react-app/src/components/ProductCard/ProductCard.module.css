@@ -7,3 +7,8 @@
   font-weight: 600;
   color: #1a1f36;
 }
+
+
+.inactive{
+  opacity: 0.5;
+}
