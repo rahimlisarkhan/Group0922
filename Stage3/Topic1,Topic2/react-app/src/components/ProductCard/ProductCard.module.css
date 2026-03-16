@@ -12,3 +12,9 @@
 .inactive{
   opacity: 0.5;
 }
+
+.bellIcon {
+  width: 24px;
+  height: 24px;
+  color: red;
+}

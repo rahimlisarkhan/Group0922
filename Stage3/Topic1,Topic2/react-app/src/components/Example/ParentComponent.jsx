@@ -4,9 +4,6 @@ import { Child1 } from "./Child1";
 
 export function ParentComponent(props) {
 
-  console.log("props",props);
-  
-
   const { list, age, fullname, info, isMarried, children } = props;
 
   const marriedStatus = isMarried ? 'Yes' : 'No';
