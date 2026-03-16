@@ -4,6 +4,7 @@ import styles from './ProductCard.module.css';
 import { TextHelper } from '../../helpers/Text.helper';
 import PropTypes from 'prop-types';
 import BellIcon from '../../assets/BellIcon.svg?react';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 ProductCard.propTypes = {
   title: PropTypes.string,
@@ -26,6 +27,7 @@ export function ProductCard(props) {
         <p className={styles.price}>{price}AZN</p>
         {/* <img src={BellIcon} alt="Bell Icon" /> */}
         <BellIcon className={styles.bellIcon} />
+        <AiOutlineShoppingCart className={styles.cartIcon} />
         <Button variant="warning" disabled={!active}>
           {active ? 'More' : 'Unavailable'}
         </Button>

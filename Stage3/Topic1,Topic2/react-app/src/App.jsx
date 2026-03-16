@@ -18,6 +18,12 @@ export function App() {
   const d = { name: 'John', age: 30 }
   const e = false
 
+
+  const sayHello = (data) => {
+    console.log("Hello Asef");
+    console.log("Data received:", data);
+  }
+
   return (
     <>
       <Header />
@@ -28,6 +34,7 @@ export function App() {
           fullname={c}
           info={d}
           isMarried={e}
+          onSayHello={sayHello}
         >
           <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod officiis placeat distinctio vero voluptas consequuntur et necessitatibus earum exercitationem! Aspernatur ducimus labore corporis libero aliquam ipsum eum quidem. Dolor, quaerat.
