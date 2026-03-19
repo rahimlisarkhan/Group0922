@@ -8,27 +8,29 @@ import { Footer } from './components/Footer'
 import { Container } from './components/Container'
 import { ParentComponent } from './components/Example/ParentComponent'
 import { products } from './constants/product'
+import { TodoState } from './components/TodoState'
+import { TodoApp } from './features/TodoApp'
 
 
 export function App() {
 
-  const a = [1, 2, 3, 4, 5];
-  const b = 12
-  const c = 'Hello World'
-  const d = { name: 'John', age: 30 }
-  const e = false
+  // const a = [1, 2, 3, 4, 5];
+  // const b = 12
+  // const c = 'Hello World'
+  // const d = { name: 'John', age: 30 }
+  // const e = false
 
-
-  const sayHello = (data) => {
-    console.log("Hello Asef");
-    console.log("Data received:", data);
-  }
+  // const sayHello = (data) => {
+  //   console.log("Hello Asef");
+  //   console.log("Data received:", data);
+  // }
 
   return (
     <>
       <Header />
       <Container>
-        <ParentComponent
+        <TodoApp/>
+        {/* <ParentComponent
           list={a}
           age={b}
           fullname={c}
@@ -48,11 +50,12 @@ export function App() {
           </p>   <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod officiis placeat distinctio vero voluptas consequuntur et necessitatibus earum exercitationem! Aspernatur ducimus labore corporis libero aliquam ipsum eum quidem. Dolor, quaerat.
           </p>
-        </ParentComponent>
-        <AboutUs  />
-        <Products data={products} />
-        <ContactUs phone="123-456-7890" />
-        <Products info="Lorem ipsum dolor sit amet, consectetur adipiscing elit." data={products} />
+        </ParentComponent> */}
+        {/* <AboutUs  /> */}
+        {/* <TodoState /> */}
+        {/* <Products data={products} /> */}
+        {/* <ContactUs phone="123-456-7890" /> */}
+        {/* <Products info="Lorem ipsum dolor sit amet, consectetur adipiscing elit." data={products} /> */}
       </Container>
       <Footer />
     </>

@@ -11,16 +11,14 @@ ButtonCustom.propTypes = {
   disabled: PropTypes.bool
 }
 
-export function ButtonCustom(props) {
-
-  const { style, className, loading, variant, disabled} = props
+export function ButtonCustom({ style, className, loading, variant = 'primary', disabled, children }) {
 
   const dynamicClass = styles[variant];
 
   return (
     // <button className="btn">
     <button className={`${styles.btn} ${dynamicClass} ${className}`} style={style} disabled={loading || disabled}>
-      {loading ? "Loading..." : props.children}
+      {loading ? "Loading..." : children}
     </button>
   )
 }
