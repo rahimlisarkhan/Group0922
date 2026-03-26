@@ -17,13 +17,16 @@ export function TodoState() {
     console.log("component rendered!");
 
     const increment = () => {
-        const newValue = value < stock ? value + 1 : stock
-        setValue(newValue)
+        // const newValue = value < stock ? value + 1 : stock
+        setValue((oldValue)=>{
+          const data = oldValue < stock ? oldValue + 1 : stock
+          return data
+        })
     }
 
     const decrement = () => {
-        const newValue = value > 0 ? value - 1 : 0
-        setValue(newValue)
+        // const newValue = value > 0 ? value - 1 : 0
+        setValue((oldValue) => oldValue > 0 ? oldValue - 1 : 0)
     }
 
 

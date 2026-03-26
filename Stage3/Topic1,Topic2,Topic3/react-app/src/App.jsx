@@ -10,6 +10,7 @@ import { ParentComponent } from './components/Example/ParentComponent'
 import { products } from './constants/product'
 import { TodoState } from './components/TodoState'
 import { TodoApp } from './features/TodoApp'
+import { Pokemons } from './components/Pokemons'
 
 
 export function App() {
@@ -29,7 +30,8 @@ export function App() {
     <>
       <Header />
       <Container>
-        <TodoApp/>
+        <Pokemons/>
+                {/* <TodoApp/> */}
         {/* <ParentComponent
           list={a}
           age={b}

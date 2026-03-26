@@ -1,5 +1,7 @@
 import { useRef, useState } from "react"
 
+import { v4 as uuidv4 } from 'uuid';
+
 
 export function TodoApp() {
 
@@ -15,19 +17,19 @@ export function TodoApp() {
         const value = inputRef.current.value
 
         const newTodo = {
-            id: Date.now(),
+            id: uuidv4(),
             title: value
         }
 
         console.log("newTodo",newTodo);
 
-        const newTodoList = [...todo, newTodo]
+        // const newTodoList = [...todo, newTodo]
 
-        setTodo(newTodoList)
+        // setTodo(newTodoList)
+        setTodo((prevTodos)=> [...prevTodos, newTodo])
 
         inputRef.current.value = ""
     }
-
 
 
     const elements = todo.map((item) => (
