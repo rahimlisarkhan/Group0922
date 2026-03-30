@@ -11,6 +11,7 @@ import { products } from './constants/product'
 import { TodoState } from './components/TodoState'
 import { TodoApp } from './features/TodoApp'
 import { Pokemons } from './components/Pokemons'
+import { ProductForm } from './components/ProductForm'
 
 
 export function App() {
@@ -30,8 +31,9 @@ export function App() {
     <>
       <Header />
       <Container>
-        <Pokemons/>
-                {/* <TodoApp/> */}
+      <ProductForm/>
+        {/* <Pokemons/> */}
+        {/* <TodoApp/> */}
         {/* <ParentComponent
           list={a}
           age={b}
