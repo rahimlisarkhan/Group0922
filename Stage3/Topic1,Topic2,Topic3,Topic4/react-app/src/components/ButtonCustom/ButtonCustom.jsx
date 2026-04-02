@@ -1,4 +1,5 @@
 // import "./Button.css"
+import { useRef } from "react";
 import styles from  "./Button.module.css"
 import PropTypes from 'prop-types';
 
@@ -17,7 +18,6 @@ export function ButtonCustom({ style, className, loading, variant = 'primary', d
   const dynamicClass = styles[variant];
 
   return (
-    // <button className="btn">
     <button className={`${styles.btn} ${dynamicClass} ${className}`} style={style} disabled={loading || disabled} onClick={onClick}>
       {loading ? "Loading..." : children}
     </button>

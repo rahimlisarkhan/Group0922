@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import { isEmailValid } from '../../helpers/regex';
 import { FormField } from '../FormField';
 import { ButtonCustom } from '../ButtonCustom';
+// import { useEffect } from 'react';
 
 const initialFormState = {
     fullname: '',
@@ -57,6 +58,22 @@ export const ProductForm = () => {
         },
     });
 
+  
+
+    // useEffect(()=>{
+
+    //     // document.title =  "Asef Form"
+
+    //         // inputRef.current.focus()
+
+    //     window.addEventListener("mousemove",function(e){
+    //         console.log("mousemove...", e);
+
+    //         // input.current.focus()
+    //     })
+
+    // },[])
+
     return <div>
         <h1>
             Product Form
@@ -92,7 +109,6 @@ export const ProductForm = () => {
         </ButtonCustom>
     </div>
 }
-
 
 
 // const name = "fullname"

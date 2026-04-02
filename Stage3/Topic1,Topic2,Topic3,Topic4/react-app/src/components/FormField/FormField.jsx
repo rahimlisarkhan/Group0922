@@ -1,7 +1,23 @@
 import PropTypes from 'prop-types';
 import styles from './FormField.module.css';
+import { useState } from 'react';
 
-export const FormField = ({ label, name, value, onChange, error, type = "text" }) => {
+export const FormField = ({ label, name, value, onChange, onSend, error, type = "text" }) => {
+    const [focus, setFocus] = useState(false);
+
+    console.log("focus",focus);
+    
+
+    const handleEnter = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+
+            console.log("Enter...");
+            
+            onSend?.();
+        }
+    }
+
     return (
         <div className={styles.field}>
             {label && <label className={styles.label}>{label}</label>}
@@ -10,7 +26,10 @@ export const FormField = ({ label, name, value, onChange, error, type = "text" }
                 name={name}
                 value={value}
                 onChange={onChange}
-                className={`${styles.input} ${error ? styles.inputError : ''}`}
+                onFocus={() => setFocus(true)}
+                onBlur={() => setFocus(false)}
+                onKeyDown={handleEnter}
+                className={`${styles.input} ${error ? styles.inputError : ''} ${focus ? styles.inputFocus : ''}`}
             />
             {error && <span className={styles.error}>{error}</span>}
         </div>
@@ -24,4 +43,5 @@ FormField.propTypes = {
     onChange: PropTypes.func.isRequired,
     error: PropTypes.string,
     type: PropTypes.string,
+    onSend: PropTypes.func.isOptional,
 }

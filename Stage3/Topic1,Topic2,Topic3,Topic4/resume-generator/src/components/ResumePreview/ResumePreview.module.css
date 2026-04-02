@@ -1,0 +1,197 @@
+.preview {
+  padding: 36px 32px;
+  font-family: 'Georgia', serif;
+  color: #222;
+  min-height: 400px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1677ff;
+  margin-bottom: 24px;
+}
+
+.headerInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.position {
+  font-size: 15px;
+  color: #1677ff;
+  font-style: italic;
+  margin: 0 0 10px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.contactItem {
+  font-size: 12px;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+}
+
+.contactDot {
+  color: #bbb;
+  margin-right: 4px;
+}
+
+/* ── Body: two-col layout ── */
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Main ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Section ── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1677ff;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e0eaff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Summary */
+.summaryText {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Skills */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background-color: #e6f0ff;
+  color: #1677ff;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 500;
+}
+
+/* Experience */
+.expItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.expRole {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+
+.expCompany {
+  font-size: 12px;
+  color: #1677ff;
+  font-family: 'Arial', sans-serif;
+}
+
+.expMeta {
+  font-size: 11px;
+  color: #888;
+  font-family: 'Arial', sans-serif;
+}
+
+.expDesc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* Education */
+.eduItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eduDegree {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+.eduSchool {
+  font-size: 12px;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+}
+
+.eduYear {
+  font-size: 11px;
+  color: #888;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Languages */
+.langItem {
+  font-size: 12px;
+  color: #444;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Empty state */
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #bfbfbf;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emptyIcon {
+  font-size: 40px;
+}
