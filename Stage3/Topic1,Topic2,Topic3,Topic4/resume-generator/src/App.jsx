@@ -1,4 +1,4 @@
-import ResumeContainer from './feature/ResumeContainer';
+import ResumeContainer from "./feature/resume/components/ResumeContainer";
 
 function App() {
   return <ResumeContainer />;

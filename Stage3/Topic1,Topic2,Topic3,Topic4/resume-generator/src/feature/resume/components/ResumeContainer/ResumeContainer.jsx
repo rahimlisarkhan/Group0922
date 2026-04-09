@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ResumeForm from '../../components/ResumeForm/ResumeForm';
-import ResumePreview from '../../components/ResumePreview/ResumePreview';
+import ResumeForm from '../ResumeForm';
+import ResumePreview from '../ResumePreview';
 import styles from './ResumeContainer.module.css';
 
 

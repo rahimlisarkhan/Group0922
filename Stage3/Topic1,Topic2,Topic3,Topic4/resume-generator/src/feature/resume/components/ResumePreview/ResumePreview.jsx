@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import Avatar from '../Avatar';
-import { Title, Text, Paragraph } from '../Typography';
-import parseTags from '../../utils/parseTags';
+import Avatar from '@/components/Avatar';
+import { Title, Text, Paragraph } from '@/components/Typography';
+import parseTags from '@/utils/parseTags';
 import styles from './ResumePreview.module.css';
 import { usePDF } from 'react-to-pdf';
-import Button from '../Button';
 
 function ResumePreview({ data = {} }) {
 

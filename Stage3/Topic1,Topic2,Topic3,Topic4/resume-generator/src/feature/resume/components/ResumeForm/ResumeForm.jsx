@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import Input from '../Input';
-import Textarea from '../Textarea';
-import Button from '../Button';
-import { Title } from '../Typography';
-import SectionTitle from '../SectionTitle';
+import Input from '@/components/Input';
+import Textarea from '@/components/Textarea';
+import Button from '@/components/Button';
+import { Title } from '@/components/Typography';
+import SectionTitle from '@/feature/resume/components/SectionTitle';
 import styles from './ResumeForm.module.css';
 
 import {useFormik} from 'formik';
