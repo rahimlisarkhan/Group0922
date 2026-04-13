@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Text } from '@/components/Typography';
+import { Text } from '@/shared/Typography';
 import styles from './SectionTitle.module.css';
 
 function SectionTitle({ children = null, className = '' }) {

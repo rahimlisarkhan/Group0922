@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Avatar from '@/components/Avatar';
-import { Title, Text, Paragraph } from '@/components/Typography';
+import Avatar from '@/shared/Avatar';
+import { Title, Text, Paragraph } from '@/shared/Typography';
 import parseTags from '@/utils/parseTags';
 import styles from './ResumePreview.module.css';
 import { usePDF } from 'react-to-pdf';

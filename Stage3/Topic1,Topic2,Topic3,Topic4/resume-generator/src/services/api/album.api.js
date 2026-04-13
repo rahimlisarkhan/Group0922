@@ -1,5 +1,5 @@
 import Client from "@/helpers/client";
-import { ENDPOINTS } from "../Endpoint";
+import { ENDPOINTS } from "../endpoint";
 import { successHandler, errorHandler } from "../handler";
 
 export const getAlbums = async (params) => {

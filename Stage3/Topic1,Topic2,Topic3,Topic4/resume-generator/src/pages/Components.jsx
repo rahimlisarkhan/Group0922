@@ -1,7 +1,7 @@
-import Button from '../components/Button';
-import Input from '../components/Input';
-import Typography from '../components/Typography';
-import Avatar from '../components/Avatar';
+import Button from '../shared/Button';
+import Input from '../shared/Input';
+import Typography from '../shared/Typography';
+import Avatar from '../shared/Avatar';
 
 const { Title, Text, Paragraph } = Typography;
 

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import Input from '@/components/Input';
-import Textarea from '@/components/Textarea';
-import Button from '@/components/Button';
-import { Title } from '@/components/Typography';
+import Input from '@/shared/Input';
+import Textarea from '@/shared/Textarea';
+import Button from '@/shared/Button';
+import { Title } from '@/shared/Typography';
 import SectionTitle from '@/feature/resume/components/SectionTitle';
 import styles from './ResumeForm.module.css';
 
