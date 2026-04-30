@@ -1,0 +1,115 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 60px 24px;
+  text-align: center;
+  user-select: none;
+}
+
+/* Glitch number */
+.glitch {
+  position: relative;
+  font-size: 140px;
+  font-weight: 900;
+  line-height: 1;
+  color: #1a1a2e;
+  letter-spacing: -6px;
+  margin-bottom: 8px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+.glitch::before {
+  color: #1677ff;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  transform: translate(-3px, -2px);
+  animation: glitchTop 3s infinite linear;
+}
+
+.glitch::after {
+  color: #ff4d4f;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  transform: translate(3px, 2px);
+  animation: glitchBottom 3s infinite linear;
+}
+
+@keyframes glitchTop {
+  0%, 90%, 100% { transform: translate(-3px, -2px); opacity: 1; }
+  92%            { transform: translate(3px, -2px);  opacity: 0.8; }
+  94%            { transform: translate(-3px, 2px);  opacity: 1; }
+  96%            { transform: translate(3px, 0);     opacity: 0.9; }
+}
+
+@keyframes glitchBottom {
+  0%, 90%, 100% { transform: translate(3px, 2px);  opacity: 1; }
+  92%            { transform: translate(-3px, 2px); opacity: 0.8; }
+  94%            { transform: translate(3px, -2px); opacity: 1; }
+  96%            { transform: translate(-3px, 0);   opacity: 0.9; }
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 16px 0 12px;
+}
+
+.description {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnPrimary {
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 8px;
+  border: none;
+  background: #1677ff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnPrimary:hover {
+  background: #4096ff;
+}
+
+.btnGhost {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background: transparent;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btnGhost:hover {
+  border-color: #1677ff;
+  color: #1677ff;
+}

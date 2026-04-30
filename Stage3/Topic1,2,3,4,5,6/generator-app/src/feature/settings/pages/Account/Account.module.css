@@ -1,0 +1,84 @@
+.pageTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+
+.avatarRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.avatarName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.changeBtn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #1677ff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.changeBtn:hover {
+  color: #4096ff;
+}
+
+.input {
+  height: 34px;
+  width: 220px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #1677ff;
+}
+
+.outlineBtn {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background: transparent;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.outlineBtn:hover {
+  border-color: #1677ff;
+  color: #1677ff;
+}
+
+.dangerBtn {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid #ff4d4f;
+  background: transparent;
+  font-size: 13px;
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dangerBtn:hover {
+  background: #ff4d4f;
+  color: #fff;
+}
