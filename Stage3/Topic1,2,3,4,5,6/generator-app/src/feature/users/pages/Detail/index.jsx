@@ -37,6 +37,15 @@ const UserDetails = () => {
         <div className={styles.profileInfo}>
           <h1 className={styles.name}>{name}</h1>
           <span className={styles.username}>@{username}</span>
+          <button
+            className={styles.back}
+            onClick={() =>
+              navigate(
+                `/resume-creator?userId=${userId}&calculate=disable&count=disable`,
+              )
+            }>
+            Create resume
+          </button>
         </div>
       </div>
 

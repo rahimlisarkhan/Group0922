@@ -8,7 +8,9 @@ import styles from './ResumeForm.module.css';
 
 // import { useFormik } from 'formik';
 import { useForm } from '@/shared/hooks/useForm';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { getUserById } from '@/shared/services/api/user.api';
 
 const initialValues = {
   fullName: '',
@@ -34,11 +36,24 @@ const initialValues = {
 function ResumeForm({ setData }) {
   const [count, setCount] = useState(0);
 
+  const location = useLocation();
+
+  console.log('location', location);
+
+  const [searchParams] = useSearchParams();
+
+  const calculateParam = searchParams.get('calculate');
+  const countParam = searchParams.get('count');
+  const userId = searchParams.get('userId');
+
+  console.log(calculateParam, countParam, userId);
+
   const {
     values,
     handleChange,
     resetForm: handleReset,
     handleSubmit,
+    setFieldsValue,
   } = useForm({
     initialValues,
     onSubmit: (values, resetForm) => {
@@ -46,6 +61,25 @@ function ResumeForm({ setData }) {
       resetForm();
     },
   });
+
+  useEffect(() => {
+    if (userId) {
+      async function fetchUserData() {
+        const response = await getUserById(userId);
+        if (response.result) {
+          const { name, email, phone, website } = response.data;
+          setFieldsValue({
+            fullName: name,
+            email,
+            phone,
+            website,
+          });
+        }
+      }
+      fetchUserData();
+    }
+  }, [userId]);
+  // Simulate fetching user data and populating the form
 
   console.log('rendering...');
 
@@ -58,15 +92,6 @@ function ResumeForm({ setData }) {
     console.log('sum', sum + count);
 
     return sum;
-  }, [count]);
-
-  const calcSum = useMemo(() => {
-    let sum = 0;
-    for (let i = 0; i < 100; i++) {
-      sum += 1;
-    }
-
-    return sum + count;
   }, [count]);
 
   // let pi = useRef(3.14);
@@ -84,17 +109,17 @@ function ResumeForm({ setData }) {
 
   return (
     <div className={styles.form}>
-      <Title level={4} style={{ marginBottom: 4 }}>
-        Resume Builder:{calcSum}
-      </Title>
-
       {/* Personal */}
       <div className={styles.section}>
         <SectionTitle>Personal Info </SectionTitle>
-        <button onClick={handleCalcSum}>Calculate Sum</button>
-        <button onClick={() => setCount((prev) => prev + 1)}>
-          Count: {count}
-        </button>
+        {calculateParam !== 'disable' && (
+          <button onClick={handleCalcSum}>Calculate Sum</button>
+        )}
+        {countParam !== 'disable' && (
+          <button onClick={() => setCount((prev) => prev + 1)}>
+            Count: {count}
+          </button>
+        )}
         <div className={styles.row}>
           <Input
             label="Full Name"

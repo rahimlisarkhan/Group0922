@@ -2,7 +2,7 @@ import styles from './SettingCard.module.css';
 
 const SettingCard = ({ title, children }) => (
   <div className={styles.card}>
-    {title && <h3 className={styles.title}>{title}</h3>}
+    {title && <p className={styles.title}>{title}</p>}
     <div className={styles.body}>{children}</div>
   </div>
 );

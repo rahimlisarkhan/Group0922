@@ -20,5 +20,12 @@ export const useForm = ({ initialValues, onSubmit }) => {
     onSubmit(values, resetForm);
   };
 
-  return { values, handleChange, resetForm, handleSubmit };
+  const setFieldsValue = (newValues) => {
+    setValues((prevValues) => ({
+      ...prevValues,
+      ...newValues,
+    }));
+  };
+
+  return { values, handleChange, resetForm, setFieldsValue, handleSubmit };
 };
