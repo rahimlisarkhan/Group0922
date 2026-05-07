@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useFetchData = (cl, { onSuccess, onError }) => {
+export const useFetchData = (cl, { onSuccess, onError } = {}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
