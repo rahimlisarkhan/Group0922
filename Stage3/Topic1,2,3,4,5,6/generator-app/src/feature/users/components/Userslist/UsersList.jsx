@@ -6,6 +6,7 @@ import { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '@/shared/components/Spinner';
 import NotFound from '@/shared/components/NotFound';
+import { useGlobal } from '@/shared/providers/global/useGlobal';
 
 const TYPES = {
   COUNTU_DEYIS: 'countu_deyis',
@@ -54,7 +55,17 @@ function reducer(state, action) {
 }
 
 function UsersList() {
-  const { data: users, loading, error } = useFetchData(getUsers);
+  const { fillUsers } = useGlobal();
+
+  const {
+    data: users,
+    loading,
+    error,
+  } = useFetchData(getUsers, {
+    onSuccess: (data) => {
+      fillUsers(data);
+    },
+  });
 
   const [state, dispatch] = useReducer(reducer, initialState);
 

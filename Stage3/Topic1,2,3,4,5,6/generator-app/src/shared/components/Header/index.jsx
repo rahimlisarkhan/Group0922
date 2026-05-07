@@ -1,9 +1,17 @@
 import Avatar from '@/shared/components/Avatar';
 import styles from './Header.module.css';
+import { useGlobal } from '@/shared/providers/global/useGlobal';
 
-const Header = ({ brandName = 'Company', user = null }) => {
-  const initials = user?.name
-    ? user.name.split(' ').map((w) => w[0]).join('').slice(0, 2)
+const Header = ({ brandName = 'Company' }) => {
+  const { profile } = useGlobal();
+  console.log(profile);
+
+  const initials = profile?.fullname
+    ? profile.fullname
+        .split(' ')
+        .map((w) => w[0])
+        .join('')
+        .slice(0, 2)
     : 'U';
 
   return (
@@ -14,6 +22,7 @@ const Header = ({ brandName = 'Company', user = null }) => {
       </div>
       <div className={styles.actions}>
         <Avatar initials={initials} size="sm" />
+        <span className={styles.username}>{profile?.fullname || 'User'}</span>
       </div>
     </header>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useFetchData = (cl) => {
+export const useFetchData = (cl, { onSuccess, onError }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,8 +13,10 @@ export const useFetchData = (cl) => {
       const res = await cl();
       if (res.result) {
         setData(res.data);
+        onSuccess?.(res.data);
       } else {
         setError('Failed to load data.');
+        onError?.();
       }
       setLoading(false);
     };
