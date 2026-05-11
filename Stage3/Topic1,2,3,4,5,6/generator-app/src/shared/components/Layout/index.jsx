@@ -1,11 +1,22 @@
 import Header from '@/shared/components/Header';
 import Sidebar from '@/shared/components/Sidebar';
+import {
+  FileTextOutlined,
+  ReadOutlined,
+  SettingOutlined,
+  TeamOutlined,
+} from '@ant-design/icons';
 import styles from './Layout.module.css';
 
 const NAV_ITEMS = [
-  { to: '/', label: 'Users', icon: '👥' },
-  { to: '/resume-creator', label: 'Resume Creator', icon: '📄' },
-  { to: '/setting', label: 'Settings', icon: '⚙️' },
+  { to: '/', label: 'Users', icon: <TeamOutlined /> },
+  {
+    to: '/resume-creator',
+    label: 'Resume Creator',
+    icon: <FileTextOutlined />,
+  },
+  { to: '/blogs', label: 'Blogs', icon: <ReadOutlined /> },
+  { to: '/setting', label: 'Settings', icon: <SettingOutlined /> },
 ];
 
 const Layout = ({ children, user }) => {

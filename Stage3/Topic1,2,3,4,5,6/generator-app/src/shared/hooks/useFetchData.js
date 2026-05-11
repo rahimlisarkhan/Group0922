@@ -11,6 +11,9 @@ export const useFetchData = (cl, { onSuccess, onError } = {}) => {
       setError(null);
 
       const res = await cl();
+
+      console.log('res', res);
+
       if (res.result) {
         setData(res.data);
         onSuccess?.(res.data);
