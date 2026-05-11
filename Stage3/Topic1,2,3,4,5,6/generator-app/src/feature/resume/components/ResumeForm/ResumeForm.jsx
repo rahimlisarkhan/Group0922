@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Input from '@/shared/components/Input';
 import Textarea from '@/shared/components/Textarea';
 import Button from '@/shared/components/Button';
-import { Title } from '@/shared/components/Typography';
+// import { Title } from '@/shared/components/Typography';
 import SectionTitle from '@/feature/resume/components/SectionTitle';
 import styles from './ResumeForm.module.css';
 
@@ -56,9 +56,9 @@ function ResumeForm({ setData }) {
     setFieldsValue,
   } = useForm({
     initialValues,
-    onSubmit: (values, resetForm) => {
+    onSubmit: (values) => {
       setData(values);
-      resetForm();
+      // resetForm();
     },
   });
 
@@ -79,17 +79,19 @@ function ResumeForm({ setData }) {
       fetchUserData();
     }
   }, [userId]);
-  // Simulate fetching user data and populating the form
 
-  console.log('rendering...');
+  useEffect(() => {
+    if (values?.fullName) {
+      handleSubmit();
+    }
+  }, [values?.fullName]);
+  // Simulate fetching user data and populating the form
 
   const handleCalcSum = useCallback(() => {
     let sum = 0;
     for (let i = 0; i < 100; i++) {
       sum += 1;
     }
-
-    console.log('sum', sum + count);
 
     return sum;
   }, [count]);

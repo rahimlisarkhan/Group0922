@@ -62,6 +62,8 @@ function UsersList() {
     loading,
     error,
   } = useFetchData(getUsers, {
+    // key: 'users',
+    // refetchInterval: 60000,
     onSuccess: (data) => {
       fillUsers(data);
     },

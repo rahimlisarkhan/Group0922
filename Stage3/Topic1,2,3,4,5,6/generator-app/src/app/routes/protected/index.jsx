@@ -16,6 +16,9 @@ const GeneralSettings = lazy(() => import('@/feature/settings/pages/General'));
 const ResumeCreator = lazy(
   () => import('@/feature/resume/pages/ResumeCreator'),
 );
+const Blogs = lazy(() => import('@/feature/blog/pages/Blogs'));
+const BlogCreate = lazy(() => import('@/feature/blog/pages/BlogCreate'));
+const BlogDetail = lazy(() => import('@/feature/blog/pages/BlogDetail'));
 
 export const ProtectedRouter = () => {
   return (
@@ -26,6 +29,10 @@ export const ProtectedRouter = () => {
           <Route path="/user-info/:userId" element={<UserDetails />} />
 
           <Route path="/resume-creator" element={<ResumeCreator />} />
+
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/create" element={<BlogCreate />} />
+          <Route path="/blogs/:blogId" element={<BlogDetail />} />
 
           <Route path="/setting/*" element={<GeneralSettings />} />
 

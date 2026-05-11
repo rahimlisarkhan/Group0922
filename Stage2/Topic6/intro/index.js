@@ -1,5 +1,3 @@
-
-
 // // Timeout fn
 
 // const btn = document.getElementById("btn");
@@ -17,7 +15,6 @@
 //        }, 1000)
 // })
 
-
 // //debounce fn
 
 // function debounce(fn, delay){
@@ -32,7 +29,6 @@
 //     }
 // }
 
-
 // const searchInput = document.getElementById("searchInput");
 
 // const debouncedFunction = debounce(function(){
@@ -41,13 +37,10 @@
 
 // searchInput.addEventListener("input", debouncedFunction)
 
-
 // // console.log("b", b);
-
 
 // // const a = 10;
 // // const b = 20;
-
 
 // // function B(){
 // //     console.log("Inside B fn");
@@ -55,13 +48,7 @@
 
 // // console.log("Sum is: ", a + b); // 1
 
-// // B() // 
-
-
-
-
-
-
+// // B() //
 
 // JS is single threaded
 // Call Stack
@@ -75,7 +62,6 @@
 // MICRO-TASK QUEUE
 // MACRO-TASK QUEUE
 
-
 // console.log("Start");
 
 // setTimeout(function(){
@@ -88,17 +74,10 @@
 
 // console.log("End");
 
-
 // Start
 // End
 // "Promise 1"
 // Timeout 1
-
-
-
-
-
-
 
 // function A(n){
 //     if(n <= 0){
@@ -108,25 +87,20 @@
 //     return n + A(n - 1);
 // }
 
-
 // A(5)
 
-
-
 // Recursion Example: Factorial
-function factorial(n){
+function factorial(n) {
+  if (n <= 1) {
+    return 1;
+  }
 
-    if(n <= 1){
-        return 1;
-    }
+  const result = n * factorial(n - 1);
 
-    const result = n * factorial(n - 1)
-
-    return result;
+  return result;
 }
 
-
-// const netice = factorial(5) 
+// const netice = factorial(5)
 
 // console.log(netice);
 
@@ -139,48 +113,73 @@ function factorial(n){
 // Recursion Example: Children country
 
 const countries = [
-    {
-        name: "Azerbaijan",
+  {
+    name: 'Azerbaijan',
+    children: [
+      { name: 'Yevlax', children: [] },
+      {
+        name: 'Baki',
         children: [
-            { name: "Yevlax", children: [] },
-            {
-                name: "Baki",
-                children: [
-                    { name: "Xetai", children: [] },
-                    { name: "Sebail", children: [] },
-                ],
-            },
+          { name: 'Xetai', children: [] },
+          { name: 'Sebail', children: [] },
         ],
-    },
-    {
-        name: "Turkiye",
+      },
+    ],
+  },
+  {
+    name: 'Turkiye',
+    children: [
+      { name: 'Istanbul', children: [] },
+      {
+        name: 'Ankara',
         children: [
-            { name: "Istanbul", children: [] },
-            { name: "Ankara", children: [{
-                name: "Cankaya", children: []
-            }] },
+          {
+            name: 'Cankaya',
+            children: [],
+          },
         ],
-    },
+      },
+    ],
+  },
 ];
 
+function printCountries(list) {
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
 
-function printCountries(list){
-    
+    console.log('----');
+    console.log(item.name);
+    console.log('----');
 
-    for (let i = 0; i < list.length; i++) {
-        const item = list[i];
-    
-        console.log("----");
-        console.log(item.name);
-        console.log("----");
-
-        if(item.children.length > 0){
-            printCountries(item.children);
-        }
-    
+    if (item.children.length > 0) {
+      printCountries(item.children);
     }
-
+  }
 }
 
-
 printCountries(countries);
+
+function sumClosure() {
+  const cache = {};
+
+  return function (num1, num2) {
+    const key = `${num1}-${num2}`;
+
+    if (cache[key]) {
+      console.log('Cache hit for', key);
+      return cache[key];
+    }
+
+    const result = num1 + num2;
+    cache[key] = result;
+    return result;
+  };
+}
+
+const calc = sumClosure();
+
+const total = calc(2, 9); // 700ms
+const total = calc(2, 9); // 100ms
+// const total = calc(5, 10);
+
+console.log(total);
