@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
 import { sum } from './utils/sum/sum';
+import { Button } from './Button';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,15 +20,24 @@ function App() {
         </a>
       </div>
       <h1>Vite + React :{result}</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
+      <div className="card flex gap-3 flex-wrap justify-center">
+        <Button onClick={() => setCount((count) => count + 1)}>
+          Primary — count {count}
+        </Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="danger">Danger</Button>
+        <Button variant="success">Success</Button>
+        <Button variant="warning">Warning</Button>
+        <Button disabled>Disabled</Button>
+        <p className="text-amber-400 text-2xl lg:text-6xl">
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
+      <div className="text-5xl border-2 border-amber-500 border-t-orange-600 p-5 flex flex-col lg:flex-row">
+        <span className="bg-amber-300 p-2">1</span>
+        <span className="bg-red-300 p-2">2</span>
+      </div>
+      <p className="text-red-500">
         Click on the Vite and React logos to learn more
       </p>
     </>

@@ -1,68 +1,109 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/**
+ * @theme — Tailwind v4 custom design tokens
+ *
+ * Every variable defined here becomes a utility class automatically:
+ *   --color-brand-500  →  bg-brand-500 / text-brand-500 / border-brand-500
+ *   --color-accent-500 →  bg-accent-500 / text-accent-500 / etc.
+ *
+ * No tailwind.config.js needed in v4. This file IS the config.
+ */
+@theme {
+  /* ── Brand (indigo-violet) ─────────────────────────────────────────────── */
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1; /* ← primary */
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+  --color-brand-950: #1e1b4b;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* ── Accent (rose-pink) ────────────────────────────────────────────────── */
+  --color-accent-50: #fff1f2;
+  --color-accent-100: #ffe4e6;
+  --color-accent-200: #fecdd3;
+  --color-accent-300: #fda4af;
+  --color-accent-400: #fb7185;
+  --color-accent-500: #f43f5e; /* ← primary */
+  --color-accent-600: #e11d48;
+  --color-accent-700: #be123c;
+  --color-accent-800: #9f1239;
+  --color-accent-900: #881337;
+  --color-accent-950: #4c0519;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  /* ── Success (emerald) ─────────────────────────────────────────────────── */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981; /* ← primary */
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+  --color-success-950: #022c22;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  /* ── Warning (amber) ───────────────────────────────────────────────────── */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b; /* ← primary */
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  /* ── Neutral (slate) ───────────────────────────────────────────────────── */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  /* ── Font sizes ─────────────────────────────────────────────────────────── */
+  /*
+   * --font-size-* → generates  text-{name}  utility class
+   * Each value is a pair:  font-size / line-height
+   * Usage:  className="text-display"  or  className="text-body-sm"
+   */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  /* Display — big hero / landing headings */
+  --font-size-display-2xl: 4.5rem; /* 72px  →  text-display-2xl */
+  --font-size-display-xl: 3.75rem; /* 60px  →  text-display-xl  */
+  --font-size-display-lg: 3rem; /* 48px  →  text-display-lg  */
+  --font-size-display-md: 2.25rem; /* 36px  →  text-display-md  */
+  --font-size-display-sm: 1.875rem; /* 30px  →  text-display-sm  */
+
+  /* Headings */
+  --font-size-heading-xl: 1.5rem; /* 24px  →  text-heading-xl  */
+  --font-size-heading-lg: 1.25rem; /* 20px  →  text-heading-lg  */
+  --font-size-heading-md: 1.125rem; /* 18px  →  text-heading-md  */
+  --font-size-heading-sm: 1rem; /* 16px  →  text-heading-sm  */
+  --font-size-heading-xs: 0.875rem; /* 14px  →  text-heading-xs  */
+
+  /* Body */
+  --font-size-body-lg: 1.125rem; /* 18px  →  text-body-lg     */
+  --font-size-body-md: 1rem; /* 16px  →  text-body-md     */
+  --font-size-body-sm: 0.875rem; /* 14px  →  text-body-sm     */
+  --font-size-body-xs: 0.75rem; /* 12px  →  text-body-xs     */
+
+  /* Label / caption — small UI text */
+  --font-size-label-lg: 0.875rem; /* 14px  →  text-label-lg    */
+  --font-size-label-md: 0.75rem; /* 12px  →  text-label-md    */
+  --font-size-label-sm: 0.6875rem; /* 11px  →  text-label-sm    */
 }
