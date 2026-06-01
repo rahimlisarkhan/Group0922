@@ -12,8 +12,6 @@ const Blogs = () => {
 
   const navigate = useNavigate();
 
-  const a = useSelector
-
   if (loading) {
     return <Loading />;
   }
