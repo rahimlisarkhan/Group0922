@@ -3,7 +3,7 @@
 import { useFetchData } from "@/shared/hooks/useFetchData";
 import { getAlbums } from "@/shared/services/api/album.api";
 import { AlbumCard } from "@/features/basket/components/AlbumCard";
-import type { Album } from "@/types/album";
+import type { Album } from "@/shared/types/album";
 
 export default function Page() {
   const { data, loading, error } = useFetchData<Album>(getAlbums)

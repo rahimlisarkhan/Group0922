@@ -1,12 +1,39 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getBlogById } from '@/shared/services/api/blog.api';
-import type { Blog } from '@/types/blog';
+import type { Blog } from '@/shared/types/blog';
 
 type Props = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const res = await getBlogById(id);
+
+  if (!res?.result) {
+    return { title: 'Post Not Found' };
+  }
+
+  const blog: Blog = res.data;
+  const title = blog.title.charAt(0).toUpperCase() + blog.title.slice(1);
+  const description = blog.body.slice(0, 160);
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description,
+    },
+  };
+}
 
 export default async function Page({ params }: Props) {
   const { id } = await params;

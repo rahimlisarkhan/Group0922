@@ -1,10 +1,22 @@
+import type { Metadata } from 'next';
 import { getBlogs } from "@/shared/services/api/blog.api";
 import { BlogList } from "@/features/blog/components/BlogList";
 import { redirect } from 'next/navigation'
 
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Browse all blog posts. Stay up to date with the latest articles and stories.',
+  openGraph: {
+    title: 'Blog',
+    description: 'Browse all blog posts. Stay up to date with the latest articles and stories.',
+    type: 'website',
+  },
+};
+
 
 export default async function Page() {
   const blogs = await getBlogs();
+
 
   if (!blogs.result) {
     redirect('/blog/create')

@@ -4,15 +4,20 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteBlog } from "@/shared/services/api/blog.api";
 import { BlogCard } from "@/features/blog/components/BlogCard";
-import type { Blog } from "@/types/blog";
+import type { Blog } from "@/shared/types/blog";
 
-type BlogListProps = {
+// type BlogListProps = {
+//   initialBlogs: Blog[];
+// };
+
+interface BlogListProps {
   initialBlogs: Blog[];
-};
+}
 
 export const BlogList = ({ initialBlogs }: BlogListProps) => {
   const router = useRouter();
   const [blogs, setBlogs] = useState<Blog[]>(initialBlogs);
+  // const [show, setShow] = useState<boolean>(false)
 
   const handleRemove = async (id: number) => {
     const res = await deleteBlog(id);
@@ -37,6 +42,7 @@ export const BlogList = ({ initialBlogs }: BlogListProps) => {
             key={blog.id}
             id={blog.id}
             title={blog.title}
+            gender={blog.gender}
             body={blog.body}
             onRemove={handleRemove}
           />
