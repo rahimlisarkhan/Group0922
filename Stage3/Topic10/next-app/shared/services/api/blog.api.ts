@@ -1,16 +1,17 @@
 import Client from '@/shared/helpers/client';
 import { ENDPOINTS } from '../endpoint';
 import { successHandler, errorHandler } from '../handler';
+import { IResponse } from '@/shared/types/global';
+import { Blog, IBlogPayload } from '@/shared/types/blog';
 
 const baseURL = 'https://blog-api-t6u0.onrender.com';
 
-export const getBlogs = async (params) => {
+export const getBlogs = async (): Promise<IResponse<Blog[]>> => {
   try {
     const response = await Client({
       method: 'get',
       url: ENDPOINTS.BLOG.INDEX,
       baseURL,
-      params,
     });
     return successHandler(response);
   } catch (error) {
@@ -18,7 +19,7 @@ export const getBlogs = async (params) => {
   }
 };
 
-export const getBlogById = async (id) => {
+export const getBlogById = async (id: number): Promise<IResponse<Blog>> => {
   try {
     const response = await Client({
       method: 'get',
@@ -31,7 +32,9 @@ export const getBlogById = async (id) => {
   }
 };
 
-export const createBlog = async (data) => {
+export const createBlog = async (
+  data: IBlogPayload,
+): Promise<IResponse<Blog>> => {
   try {
     const response = await Client({
       method: 'post',
@@ -45,7 +48,10 @@ export const createBlog = async (data) => {
   }
 };
 
-export const updateBlog = async (id, data) => {
+export const updateBlog = async (
+  id: number,
+  data: IBlogPayload,
+): Promise<IResponse<Blog>> => {
   try {
     const response = await Client({
       method: 'put',
@@ -59,7 +65,7 @@ export const updateBlog = async (id, data) => {
   }
 };
 
-export const deleteBlog = async (id) => {
+export const deleteBlog = async (id: number): Promise<IResponse<null>> => {
   try {
     const response = await Client({
       method: 'delete',

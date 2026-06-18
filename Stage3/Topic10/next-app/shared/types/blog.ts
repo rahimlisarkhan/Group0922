@@ -12,3 +12,8 @@ export interface Blog {
   gender: Gender;
   body: string;
 }
+
+export interface IBlogPayload {
+  title: string;
+  body: string;
+}

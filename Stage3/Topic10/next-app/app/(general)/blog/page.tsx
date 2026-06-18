@@ -28,11 +28,11 @@ export default async function Page() {
       <main className="flex flex-1 w-full max-w-3xl flex-col py-32 px-16">
         <h1 className="text-2xl font-bold mb-8">Blog</h1>
 
-        {!blogs?.result && (
+        {!blogs.result && (
           <p className="text-red-500">Failed to load blogs.</p>
         )}
 
-        {blogs?.result && <BlogList initialBlogs={blogs.data} />}
+        {blogs.result && <BlogList initialBlogs={blogs.data} />}
       </main>
     </div>
   );
